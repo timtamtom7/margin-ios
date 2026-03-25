@@ -295,7 +295,7 @@ final class DatabaseService {
         let oldThreads = try db.prepare(threads.filter(lastUpdatedAt < thresholdDate && isActive == true))
         for threadRow in oldThreads {
             if let threadIdStr = try? threadRow.get(id),
-               let threadUUID = UUID(uuidString: threadIdStr) {
+               UUID(uuidString: threadIdStr) != nil {
                 // Mark all moments in this thread as abandoned
                 let threadMoments = moments.filter(self.threadId == threadIdStr)
                 try db.run(threadMoments.update(isAbandonedThread <- true))
@@ -459,7 +459,6 @@ final class DatabaseService {
         let weekday = calendar.component(.weekday, from: dateValue)
         let daysFromMonday = (weekday + 5) % 7
         let weekStart = calendar.date(byAdding: .day, value: -daysFromMonday, to: calendar.startOfDay(for: dateValue))!
-        let weekEnd = calendar.date(byAdding: .day, value: 6, to: weekStart)!
 
         let query = weeklySummaries.filter(weekStartDate == weekStart)
         for row in try db.prepare(query) {

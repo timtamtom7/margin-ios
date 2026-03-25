@@ -17,6 +17,10 @@ struct CaptureView: View {
     @State private var detectedMood: MoodTag?
     @State private var showMoodSelector = false
 
+    // R2.5: Permission denial state
+    @State private var showPermissionDenied = false
+    @State private var permissionDeniedMessage = ""
+
     enum CaptureMode {
         case voice
         case text
@@ -58,6 +62,16 @@ struct CaptureView: View {
                         .fontWeight(.medium)
                     }
                 }
+            }
+            .alert("Permission Required", isPresented: $showPermissionDenied) {
+                Button("Open Settings") {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                Button("Cancel", role: .cancel) { }
+            } message: {
+                Text(permissionDeniedMessage)
             }
         }
     }
@@ -255,6 +269,16 @@ struct CaptureView: View {
                 await MainActor.run {
                     appState.voiceService.startRecording()
                 }
+            } else {
+                await MainActor.run {
+                    let deniedType = appState.voiceService.permissionDeniedType
+                    if deniedType == "microphone" {
+                        permissionDeniedMessage = "Microphone access is needed to record voice notes. Please enable it in Settings."
+                    } else {
+                        permissionDeniedMessage = "Speech recognition access is needed to transcribe your voice notes. Please enable it in Settings."
+                    }
+                    showPermissionDenied = true
+                }
             }
         }
     }
@@ -288,79 +312,74 @@ struct CaptureView: View {
         // R2: Detect mood
         let mood = detectedMood ?? appState.aiService.detectMood(from: textInput)
 
-        // R2: Detect thread
+        // R2: Detect thread (best effort, errors are non-fatal)
         var threadId: UUID? = nil
         var previousMomentId: UUID? = nil
+        do {
+            let recentMoments = try appState.databaseService.fetchRecentMoments()
+            if let thread = appState.aiService.detectThread(
+                moment: Moment(text: textInput, timestamp: Date(), timeOfDay: context.timeOfDay, dayOfWeek: context.dayOfWeek),
+                recentMoments: recentMoments
+            ) {
+                threadId = thread.threadId
+                previousMomentId = thread.previousMomentId
+            }
+        } catch {
+            print("Thread detection error: \(error)")
+        }
+
+        let moment = Moment(
+            text: textInput.trimmingCharacters(in: .whitespacesAndNewlines),
+            voicePath: nil,
+            timestamp: Date(),
+            timeOfDay: context.timeOfDay,
+            dayOfWeek: context.dayOfWeek,
+            contextType: context.context,
+            locationType: appState.contextService.currentLocationType,
+            isDeepThought: isDeep,
+            moodTag: mood,
+            threadId: threadId,
+            previousMomentId: previousMomentId
+        )
 
         Task {
             do {
-                let recentMoments = try await appState.databaseService.fetchRecentMoments()
-                if let thread = appState.aiService.detectThread(
-                    moment: Moment(text: textInput, timestamp: Date(), timeOfDay: context.timeOfDay, dayOfWeek: context.dayOfWeek),
-                    recentMoments: recentMoments
-                ) {
-                    threadId = thread.threadId
-                    previousMomentId = thread.previousMomentId
-                }
-            } catch {
-                print("Thread detection error: \(error)")
-            }
+                try await appState.databaseService.saveMoment(moment)
 
-            await MainActor.run {
-                let moment = Moment(
-                    text: textInput.trimmingCharacters(in: .whitespacesAndNewlines),
-                    voicePath: nil,
-                    timestamp: Date(),
-                    timeOfDay: context.timeOfDay,
-                    dayOfWeek: context.dayOfWeek,
-                    contextType: context.context,
-                    locationType: appState.contextService.currentLocationType,
-                    isDeepThought: isDeep,
-                    moodTag: mood,
-                    threadId: threadId,
-                    previousMomentId: previousMomentId
-                )
-
-                Task {
+                // R2: If this started a new thread, save it
+                if let tid = threadId, previousMomentId == nil {
+                    let thread = MomentThread(
+                        id: tid,
+                        momentIds: [moment.id],
+                        lastUpdatedAt: Date(),
+                        isActive: true
+                    )
+                    try await appState.databaseService.saveThread(thread)
+                } else if let tid = threadId, let _ = previousMomentId {
+                    // Update existing thread
                     do {
-                        try await appState.databaseService.saveMoment(moment)
-
-                        // R2: If this started a new thread, save it
-                        if let tid = threadId, previousMomentId == nil {
-                            let thread = MomentThread(
-                                id: tid,
-                                momentIds: [moment.id],
-                                lastUpdatedAt: Date(),
-                                isActive: true
-                            )
-                            try await appState.databaseService.saveThread(thread)
-                        } else if let tid = threadId, let prevId = previousMomentId {
-                            // Update existing thread
-                            do {
-                                var threads = try await appState.databaseService.fetchAllThreads()
-                                if var existingThread = threads.first(where: { $0.id == tid }) {
-                                    existingThread.momentIds.append(moment.id)
-                                    existingThread.lastUpdatedAt = Date()
-                                    try await appState.databaseService.saveThread(existingThread)
-                                }
-                            } catch {
-                                print("Thread update error: \(error)")
-                            }
-                        }
-
-                        await MainActor.run {
-                            savedMoment = moment
-                            reflectionPrompt = appState.aiService.generateReflectionPrompt()
-                            isProcessing = false
-                            showReflectionPrompt = true
+                        let allThreads = try await appState.databaseService.fetchAllThreads()
+                        if var existingThread = allThreads.first(where: { $0.id == tid }) {
+                            existingThread.momentIds.append(moment.id)
+                            existingThread.lastUpdatedAt = Date()
+                            try await appState.databaseService.saveThread(existingThread)
                         }
                     } catch {
-                        await MainActor.run {
-                            isProcessing = false
-                        }
-                        print("Save error: \(error)")
+                        print("Thread update error: \(error)")
                     }
                 }
+
+                await MainActor.run {
+                    savedMoment = moment
+                    reflectionPrompt = appState.aiService.generateReflectionPrompt()
+                    isProcessing = false
+                    showReflectionPrompt = true
+                }
+            } catch {
+                await MainActor.run {
+                    isProcessing = false
+                }
+                print("Save error: \(error)")
             }
         }
     }

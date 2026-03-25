@@ -4,10 +4,17 @@ import Speech
 
 @MainActor
 final class VoiceService: ObservableObject {
+    enum PermissionState: Equatable {
+        case unknown
+        case granted
+        case denied
+    }
+
     @Published var isRecording = false
     @Published var audioLevel: Float = 0.0
     @Published var transcription: String = ""
-    @Published var hasPermission = false
+    @Published var permissionState: PermissionState = .unknown
+    @Published var permissionDeniedType: String = ""
 
     private var audioRecorder: AVAudioRecorder?
     private var audioEngine: AVAudioEngine?
@@ -17,8 +24,23 @@ final class VoiceService: ObservableObject {
         checkPermissions()
     }
 
+    var hasPermission: Bool {
+        permissionState == .granted
+    }
+
     func checkPermissions() {
-        hasPermission = false
+        let micStatus = AVAudioApplication.shared.recordPermission
+        switch micStatus {
+        case .granted:
+            permissionState = .granted
+        case .denied:
+            permissionState = .denied
+            permissionDeniedType = "microphone"
+        case .undetermined:
+            permissionState = .unknown
+        @unknown default:
+            permissionState = .unknown
+        }
     }
 
     func requestPermissions() async -> Bool {
@@ -28,11 +50,20 @@ final class VoiceService: ObservableObject {
                 continuation.resume(returning: status == .authorized)
             }
         }
-        let granted = micStatus && speechStatus
+
         await MainActor.run {
-            self.hasPermission = granted
+            if micStatus && speechStatus {
+                self.permissionState = .granted
+            } else {
+                self.permissionState = .denied
+                if !micStatus {
+                    self.permissionDeniedType = "microphone"
+                } else {
+                    self.permissionDeniedType = "speech recognition"
+                }
+            }
         }
-        return granted
+        return micStatus && speechStatus
     }
 
     func startRecording() {
@@ -70,6 +101,7 @@ final class VoiceService: ObservableObject {
     func stopRecording() -> String? {
         audioRecorder?.stop()
         isRecording = false
+        _timerRunning = false
         audioLevel = 0
 
         guard let url = recordingURL else { return nil }
@@ -84,14 +116,29 @@ final class VoiceService: ObservableObject {
         return url.path
     }
 
+    private var meteringTimer: Timer?
+    // Shared mutable state for timer callback (runs on main run loop, not @MainActor)
+    private nonisolated(unsafe) var _meteringRecorder: AVAudioRecorder?
+    private nonisolated(unsafe) var _timerRunning: Bool = false
+
     private func startMeteringTimer() {
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
-            guard let self = self, self.isRecording else {
+        meteringTimer?.invalidate()
+        guard let recorder = audioRecorder else { return }
+        _meteringRecorder = recorder
+        _timerRunning = true
+
+        meteringTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
+            guard let self = self else {
                 timer.invalidate()
                 return
             }
-            self.audioRecorder?.updateMeters()
-            let level = self.audioRecorder?.averagePower(forChannel: 0) ?? -160
+            // Read shared nonisolated(unsafe) state set by stopRecording on MainActor
+            if !self._timerRunning {
+                timer.invalidate()
+                return
+            }
+            self._meteringRecorder?.updateMeters()
+            let level = self._meteringRecorder?.averagePower(forChannel: 0) ?? -160
             let normalized = max(0, (level + 50) / 50)
             Task { @MainActor in
                 self.audioLevel = normalized

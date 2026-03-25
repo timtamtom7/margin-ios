@@ -9,6 +9,10 @@ struct Pattern: Identifiable, Codable, Equatable {
     var confidence: Double
     let createdAt: Date
 
+    // R2: Extended pattern info
+    var insights: [String] = []
+    var suggestedActions: [String] = []
+
     init(
         id: UUID = UUID(),
         trigger: String,
@@ -16,7 +20,9 @@ struct Pattern: Identifiable, Codable, Equatable {
         patternDescription: String,
         momentCount: Int,
         confidence: Double,
-        createdAt: Date = Date()
+        createdAt: Date = Date(),
+        insights: [String] = [],
+        suggestedActions: [String] = []
     ) {
         self.id = id
         self.trigger = trigger
@@ -25,6 +31,8 @@ struct Pattern: Identifiable, Codable, Equatable {
         self.momentCount = momentCount
         self.confidence = confidence
         self.createdAt = createdAt
+        self.insights = insights
+        self.suggestedActions = suggestedActions
     }
 
     var confidenceLabel: String {
@@ -33,6 +41,15 @@ struct Pattern: Identifiable, Codable, Equatable {
         case 0.4..<0.7: return "emerging pattern"
         case 0.7..<0.9: return "strong pattern"
         default: return "consistent pattern"
+        }
+    }
+
+    var confidenceEmoji: String {
+        switch confidence {
+        case 0..<0.4: return "🔘"
+        case 0.4..<0.7: return "🔶"
+        case 0.7..<0.9: return "🟡"
+        default: return "🟢"
         }
     }
 }

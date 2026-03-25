@@ -16,6 +16,8 @@ final class AppState: ObservableObject {
         case home = 0
         case stream = 1
         case patterns = 2
+        case threads = 3  // R2: Threads tab
+        case community = 4 // R2: Community tab
     }
 
     init() {

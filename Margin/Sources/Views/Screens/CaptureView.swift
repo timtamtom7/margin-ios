@@ -13,6 +13,10 @@ struct CaptureView: View {
     @State private var savedMoment: Moment?
     @State private var voiceTranscription: String = ""
 
+    // R2: Detected mood
+    @State private var detectedMood: MoodTag?
+    @State private var showMoodSelector = false
+
     enum CaptureMode {
         case voice
         case text
@@ -45,7 +49,7 @@ struct CaptureView: View {
                     .foregroundColor(MarginColors.secondaryText)
                 }
 
-                if !showReflectionPrompt && !isProcessing && !textInput.isEmpty || (captureMode == .voice && voiceTranscription.isEmpty == false) {
+                if !showReflectionPrompt && !isProcessing && !textInput.isEmpty || (captureMode == .voice && !voiceTranscription.isEmpty) {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button("Done") {
                             submitMoment()
@@ -94,11 +98,47 @@ struct CaptureView: View {
                     RoundedRectangle(cornerRadius: 12)
                         .stroke(MarginColors.divider, lineWidth: 1)
                 )
+                .onChange(of: textInput) { _, newValue in
+                    // R2: Real-time mood detection
+                    if !newValue.isEmpty {
+                        detectedMood = appState.aiService.detectMood(from: newValue)
+                    }
+                }
+
+            // R2: Mood indicator
+            if let mood = detectedMood {
+                HStack(spacing: MarginSpacing.sm) {
+                    Text("Detected mood:")
+                        .font(MarginFonts.caption)
+                        .foregroundColor(MarginColors.secondaryText)
+                    Text(mood.emoji)
+                        .font(.system(size: 14))
+                    Text(mood.displayName)
+                        .font(MarginFonts.caption)
+                        .foregroundColor(MarginColors.accentSecondary)
+
+                    Spacer()
+
+                    Button {
+                        showMoodSelector = true
+                    } label: {
+                        Text("Change")
+                            .font(MarginFonts.caption)
+                            .foregroundColor(MarginColors.secondaryText)
+                    }
+                }
+                .padding(MarginSpacing.sm)
+                .background(MarginColors.accentSecondary.opacity(0.1))
+                .cornerRadius(8)
+            }
 
             Text("Don't think too hard. Just jot down whatever crossed your mind.")
                 .font(MarginFonts.caption)
                 .foregroundColor(MarginColors.secondaryText)
                 .italic()
+        }
+        .sheet(isPresented: $showMoodSelector) {
+            MoodSelectorSheet(selectedMood: $detectedMood)
         }
     }
 
@@ -148,12 +188,25 @@ struct CaptureView: View {
             }
 
             if !voiceTranscription.isEmpty {
-                Text("\"\(voiceTranscription)\"")
-                    .font(MarginFonts.body)
-                    .foregroundColor(MarginColors.primaryText)
-                    .padding()
-                    .background(MarginColors.surface)
-                    .cornerRadius(12)
+                VStack(spacing: MarginSpacing.sm) {
+                    Text("\"\(voiceTranscription)\"")
+                        .font(MarginFonts.body)
+                        .foregroundColor(MarginColors.primaryText)
+                        .padding()
+                        .background(MarginColors.surface)
+                        .cornerRadius(12)
+
+                    // R2: Show detected mood from transcription
+                    if let mood = detectedMood {
+                        HStack {
+                            Text(mood.emoji)
+                                .font(.system(size: 14))
+                            Text(mood.displayName)
+                                .font(MarginFonts.caption)
+                                .foregroundColor(MarginColors.accentSecondary)
+                        }
+                    }
+                }
             }
 
             Spacer()
@@ -175,7 +228,7 @@ struct CaptureView: View {
     private var reflectionView: some View {
         VStack(spacing: MarginSpacing.lg) {
             if let moment = savedMoment {
-                MomentCard(moment: moment)
+                MomentCard(moment: moment, showThreadIndicator: moment.threadId != nil)
             }
 
             AIPromptBubble(
@@ -216,6 +269,8 @@ struct CaptureView: View {
                 if !appState.voiceService.transcription.isEmpty {
                     voiceTranscription = appState.voiceService.transcription
                     textInput = voiceTranscription
+                    // R2: Detect mood from transcription
+                    detectedMood = appState.aiService.detectMood(from: voiceTranscription)
                 }
             }
         }
@@ -227,29 +282,85 @@ struct CaptureView: View {
         isProcessing = true
         let context = appState.contextService.inferContext(from: Date())
 
-        let moment = Moment(
-            text: textInput.trimmingCharacters(in: .whitespacesAndNewlines),
-            voicePath: nil,
-            timestamp: Date(),
-            timeOfDay: context.timeOfDay,
-            dayOfWeek: context.dayOfWeek,
-            contextType: context.context
-        )
+        // R2: Detect deep thought
+        let isDeep = appState.aiService.isDeepThought(text: textInput)
+
+        // R2: Detect mood
+        let mood = detectedMood ?? appState.aiService.detectMood(from: textInput)
+
+        // R2: Detect thread
+        var threadId: UUID? = nil
+        var previousMomentId: UUID? = nil
 
         Task {
             do {
-                try await appState.databaseService.saveMoment(moment)
-                await MainActor.run {
-                    savedMoment = moment
-                    reflectionPrompt = appState.aiService.generateReflectionPrompt()
-                    isProcessing = false
-                    showReflectionPrompt = true
+                let recentMoments = try await appState.databaseService.fetchRecentMoments()
+                if let thread = appState.aiService.detectThread(
+                    moment: Moment(text: textInput, timestamp: Date(), timeOfDay: context.timeOfDay, dayOfWeek: context.dayOfWeek),
+                    recentMoments: recentMoments
+                ) {
+                    threadId = thread.threadId
+                    previousMomentId = thread.previousMomentId
                 }
             } catch {
-                await MainActor.run {
-                    isProcessing = false
+                print("Thread detection error: \(error)")
+            }
+
+            await MainActor.run {
+                let moment = Moment(
+                    text: textInput.trimmingCharacters(in: .whitespacesAndNewlines),
+                    voicePath: nil,
+                    timestamp: Date(),
+                    timeOfDay: context.timeOfDay,
+                    dayOfWeek: context.dayOfWeek,
+                    contextType: context.context,
+                    locationType: appState.contextService.currentLocationType,
+                    isDeepThought: isDeep,
+                    moodTag: mood,
+                    threadId: threadId,
+                    previousMomentId: previousMomentId
+                )
+
+                Task {
+                    do {
+                        try await appState.databaseService.saveMoment(moment)
+
+                        // R2: If this started a new thread, save it
+                        if let tid = threadId, previousMomentId == nil {
+                            let thread = MomentThread(
+                                id: tid,
+                                momentIds: [moment.id],
+                                lastUpdatedAt: Date(),
+                                isActive: true
+                            )
+                            try await appState.databaseService.saveThread(thread)
+                        } else if let tid = threadId, let prevId = previousMomentId {
+                            // Update existing thread
+                            do {
+                                var threads = try await appState.databaseService.fetchAllThreads()
+                                if var existingThread = threads.first(where: { $0.id == tid }) {
+                                    existingThread.momentIds.append(moment.id)
+                                    existingThread.lastUpdatedAt = Date()
+                                    try await appState.databaseService.saveThread(existingThread)
+                                }
+                            } catch {
+                                print("Thread update error: \(error)")
+                            }
+                        }
+
+                        await MainActor.run {
+                            savedMoment = moment
+                            reflectionPrompt = appState.aiService.generateReflectionPrompt()
+                            isProcessing = false
+                            showReflectionPrompt = true
+                        }
+                    } catch {
+                        await MainActor.run {
+                            isProcessing = false
+                        }
+                        print("Save error: \(error)")
+                    }
                 }
-                print("Save error: \(error)")
             }
         }
     }
@@ -270,6 +381,69 @@ struct CaptureView: View {
         }
 
         dismiss()
+    }
+}
+
+// R2: Mood selector sheet
+struct MoodSelectorSheet: View {
+    @Binding var selectedMood: MoodTag?
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                MarginColors.background
+                    .ignoresSafeArea()
+
+                ScrollView {
+                    LazyVGrid(columns: [
+                        GridItem(.flexible()),
+                        GridItem(.flexible()),
+                        GridItem(.flexible())
+                    ], spacing: MarginSpacing.md) {
+                        ForEach(MoodTag.allCases, id: \.self) { mood in
+                            moodButton(mood)
+                        }
+                    }
+                    .padding(MarginSpacing.lg)
+                }
+            }
+            .navigationTitle("How do you feel?")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                    .foregroundColor(MarginColors.accent)
+                }
+            }
+        }
+    }
+
+    private func moodButton(_ mood: MoodTag) -> some View {
+        let isSelected = selectedMood == mood
+        return Button {
+            withAnimation(.easeInOut(duration: 0.2)) {
+                selectedMood = isSelected ? nil : mood
+            }
+        } label: {
+            VStack(spacing: MarginSpacing.sm) {
+                Text(mood.emoji)
+                    .font(.system(size: 32))
+                Text(mood.displayName)
+                    .font(MarginFonts.caption)
+                    .foregroundColor(isSelected ? MarginColors.accent : MarginColors.primaryText)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(MarginSpacing.md)
+            .background(isSelected ? MarginColors.accent.opacity(0.15) : MarginColors.surface)
+            .cornerRadius(12)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(isSelected ? MarginColors.accent : MarginColors.divider, lineWidth: isSelected ? 2 : 1)
+            )
+        }
     }
 }
 

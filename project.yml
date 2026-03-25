@@ -42,6 +42,7 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
     dependencies:
       - package: SQLite.swift
+        product: SQLite
       - package: SnapKit
 
 packages:

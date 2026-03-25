@@ -1,7 +1,7 @@
 import Foundation
 import SQLite
 
-actor DatabaseService {
+final class DatabaseService {
     private var db: Connection?
 
     // Tables
@@ -91,6 +91,7 @@ actor DatabaseService {
     // MARK: - Moments
 
     func saveMoment(_ moment: Moment) throws {
+        guard let db = db else { return }
         let insert = moments.insert(
             id <- moment.id.uuidString,
             text <- moment.text,
@@ -104,7 +105,7 @@ actor DatabaseService {
             reflectionAnswer <- moment.reflectionAnswer,
             createdAt <- moment.createdAt
         )
-        try db?.run(insert)
+        try db.run(insert)
     }
 
     func fetchAllMoments() throws -> [Moment] {
@@ -156,21 +157,24 @@ actor DatabaseService {
     }
 
     func updateMomentReflection(momentId: UUID, prompt: String?, answer: String?) throws {
+        guard let db = db else { return }
         let moment = moments.filter(id == momentId.uuidString)
-        try db?.run(moment.update(
+        try db.run(moment.update(
             reflectionPrompt <- prompt,
             reflectionAnswer <- answer
         ))
     }
 
     func deleteMoment(id momentId: UUID) throws {
+        guard let db = db else { return }
         let moment = moments.filter(id == momentId.uuidString)
-        try db?.run(moment.delete())
+        try db.run(moment.delete())
     }
 
     // MARK: - Daily Digests
 
     func saveDailyDigest(_ digest: DailyDigest) throws {
+        guard let db = db else { return }
         let insert = dailyDigests.insert(
             id <- digest.id.uuidString,
             date <- digest.date,
@@ -181,7 +185,7 @@ actor DatabaseService {
             summary <- digest.summary,
             createdAt <- digest.createdAt
         )
-        try db?.run(insert)
+        try db.run(insert)
     }
 
     func fetchLatestDigest() throws -> DailyDigest? {
@@ -226,6 +230,7 @@ actor DatabaseService {
     // MARK: - Patterns
 
     func savePattern(_ pattern: Pattern) throws {
+        guard let db = db else { return }
         let insert = patterns.insert(
             id <- pattern.id.uuidString,
             trigger <- pattern.trigger,
@@ -235,7 +240,7 @@ actor DatabaseService {
             confidence <- pattern.confidence,
             createdAt <- pattern.createdAt
         )
-        try db?.run(insert)
+        try db.run(insert)
     }
 
     func fetchAllPatterns() throws -> [Pattern] {
@@ -257,6 +262,7 @@ actor DatabaseService {
     }
 
     func deleteAllPatterns() throws {
-        try db?.run(patterns.delete())
+        guard let db = db else { return }
+        try db.run(patterns.delete())
     }
 }

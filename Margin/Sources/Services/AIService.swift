@@ -1,5 +1,4 @@
 import Foundation
-import AppleIntelligence
 
 final class AIService {
     private let prompts = [
@@ -24,7 +23,7 @@ final class AIService {
         return timeOfDay
     }
 
-    func analyzePatterns(moments: [Moment]) async -> [Pattern] {
+    func analyzePatterns(moments: [Moment]) -> [Pattern] {
         guard moments.count >= 3 else { return [] }
 
         var patterns: [Pattern] = []
@@ -102,7 +101,7 @@ final class AIService {
         }
     }
 
-    func generateDailyDigest(moments: [Moment]) async -> DailyDigest {
+    func generateDailyDigest(moments: [Moment]) -> DailyDigest {
         let totalMoments = moments.count
         let estimatedMinutes = totalMoments * 2
 

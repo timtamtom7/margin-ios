@@ -96,7 +96,7 @@ struct HomeView: View {
             if let digest = try await appState.databaseService.fetchDigest(for: today) {
                 todayDigest = digest
             } else if !todayMoments.isEmpty {
-                let digest = await appState.aiService.generateDailyDigest(moments: todayMoments)
+                let digest = appState.aiService.generateDailyDigest(moments: todayMoments)
                 try? await appState.databaseService.saveDailyDigest(digest)
                 todayDigest = digest
             }

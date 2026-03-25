@@ -123,7 +123,7 @@ struct PatternAnalysisView: View {
         do {
             try await appState.databaseService.deleteAllPatterns()
             let moments = try await appState.databaseService.fetchAllMoments()
-            let newPatterns = await appState.aiService.analyzePatterns(moments: moments)
+            let newPatterns = appState.aiService.analyzePatterns(moments: moments)
             for pattern in newPatterns {
                 try await appState.databaseService.savePattern(pattern)
             }

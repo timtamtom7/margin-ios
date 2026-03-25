@@ -1,0 +1,53 @@
+name: Margin
+options:
+  bundleIdPrefix: com.marginapp
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+    INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleDefault
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+
+targets:
+  Margin:
+    type: application
+    platform: iOS
+    sources:
+      - path: Margin/Sources
+        type: group
+      - path: Margin/Resources
+        type: group
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.marginapp.margin
+        INFOPLIST_KEY_CFBundleDisplayName: Margin
+        INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "Margin uses your location to understand the context of your moments — e.g., 'at the coffee shop' or 'at home'."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Margin uses the microphone to capture your voice thoughts."
+        INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "Margin transcribes your voice thoughts into text."
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "Margin can save your moment insights as images."
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+        SWIFT_EMIT_LOC_STRINGS: YES
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - package: SQLite.swift
+      - package: SnapKit
+
+packages:
+  SQLite.swift:
+    url: https://github.com/stephencelis/SQLite.swift
+    from: "0.15.0"
+  SnapKit:
+    url: https://github.com/SnapKit/SnapKit
+    from: "5.7.0"

@@ -1,9 +1,21 @@
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
+    @State private var columnVisibility: NavigationSplitViewVisibility = .all
 
     var body: some View {
+        Group {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                iPadContentView
+            } else {
+                iPhoneContentView
+            }
+        }
+    }
+
+    private var iPhoneContentView: some View {
         ZStack {
             TabView(selection: $appState.selectedTab) {
                 HomeView()
@@ -24,14 +36,12 @@ struct ContentView: View {
                     }
                     .tag(AppState.Tab.patterns)
 
-                // R2: Threads tab
                 ThreadsListView()
                     .tabItem {
                         Label("Threads", systemImage: "link")
                     }
                     .tag(AppState.Tab.threads)
 
-                // R2: Community tab
                 SharedFeedView()
                     .tabItem {
                         Label("Community", systemImage: "person.3")
@@ -57,9 +67,69 @@ struct ContentView: View {
                 .environmentObject(appState)
         }
     }
+
+    private var iPadContentView: some View {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
+            // Sidebar
+            List {
+                NavigationLink(destination: HomeView()) {
+                    Label("Home", systemImage: "house")
+                }
+                NavigationLink(destination: MomentStreamView()) {
+                    Label("Stream", systemImage: "list.bullet")
+                }
+                NavigationLink(destination: PatternAnalysisView()) {
+                    Label("Patterns", systemImage: "sparkles")
+                }
+                NavigationLink(destination: ThreadsListView()) {
+                    Label("Threads", systemImage: "link")
+                }
+                NavigationLink(destination: SharedFeedView()) {
+                    Label("Community", systemImage: "person.3")
+                }
+                NavigationLink(destination: WeeklySummaryView()) {
+                    Label("Weekly Summary", systemImage: "calendar")
+                }
+            }
+            .navigationTitle("Margin")
+            .navigationSplitViewColumnWidth(min: 220, ideal: 260, max: 300)
+        } detail: {
+            NavigationStack {
+                ZStack {
+                    MarginColors.background.ignoresSafeArea()
+                    VStack(spacing: MarginSpacing.lg) {
+                        Image(systemName: "text.quote")
+                            .font(.system(size: 72))
+                            .foregroundColor(MarginColors.accent.opacity(0.1))
+                        Text("Select a view from the sidebar")
+                            .font(.title3)
+                            .foregroundColor(MarginColors.secondaryText)
+                    }
+                }
+                .navigationTitle("Margin")
+                .navigationBarTitleDisplayMode(.large)
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            appState.isShowingCapture = true
+                        } label: {
+                            Image(systemName: "square.and.pencil")
+                                .foregroundColor(MarginColors.accent)
+                        }
+                    }
+                }
+            }
+        }
+        .tint(MarginColors.accent)
+        .sheet(isPresented: $appState.isShowingCapture) {
+            CaptureView()
+                .environmentObject(appState)
+        }
+    }
 }
 
-// R2: Threads list view
+// MARK: - Threads List View
+
 struct ThreadsListView: View {
     @EnvironmentObject var appState: AppState
     @State private var threads: [MomentThread] = []
@@ -102,7 +172,6 @@ struct ThreadsListView: View {
     private var threadsContent: some View {
         ScrollView {
             LazyVStack(spacing: MarginSpacing.md) {
-                // R2: Abandoned thread reminders
                 let abandoned = threads.filter { !$0.isActive }
                 if !abandoned.isEmpty {
                     Section {
@@ -122,7 +191,6 @@ struct ThreadsListView: View {
                     }
                 }
 
-                // Active threads
                 let active = threads.filter { $0.isActive }
                 if !active.isEmpty {
                     Section {
@@ -195,9 +263,4 @@ struct ThreadsListView: View {
         }
         isLoading = false
     }
-}
-
-#Preview {
-    ContentView()
-        .environmentObject(AppState())
 }

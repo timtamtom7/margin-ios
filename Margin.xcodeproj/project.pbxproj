@@ -21,6 +21,7 @@
 		53878F5D8F20B2CB42BBC4A3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0F8B26ADA6951272741BF /* AppState.swift */; };
 		5609A040324D37268AF35AC9 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FCAF048EC46E0C7E22E3E6 /* Moment.swift */; };
 		5B9B738F28FD6A20A098636B /* ContextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093927AD5E6F4617317A8F28 /* ContextService.swift */; };
+		77B5A6500F4C074EF80DBEFB /* MarginWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E33E7EEE8E5D87F6A1E3 /* MarginWatchApp.swift */; };
 		7801DF6D3C869ED9B8DBCAC4 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E680AD656F61C1051E2F26B3 /* ThreadView.swift */; };
 		8F0D9DE7DEDCD4F9D2E7D1B6 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84536039264AB1366AB0C56C /* CaptureButton.swift */; };
 		8F48E24217B639A0D78044FE /* WeeklySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B64593537A7B14E3B543E4 /* WeeklySummaryView.swift */; };
@@ -43,12 +44,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		017EAFDD200F56525E0F3531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		093927AD5E6F4617317A8F28 /* ContextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextService.swift; sourceTree = "<group>"; };
 		10AC0119187F70698C12975D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		119F6E73A59B39E6C0ACE83C /* AIPromptBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPromptBubble.swift; sourceTree = "<group>"; };
 		1516E31DCF19B4C801C0ECC9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		15D651C6A1ADBDD45BC9F85C /* Margin.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Margin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B0F8B26ADA6951272741BF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		2B05E33E7EEE8E5D87F6A1E3 /* MarginWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginWatchApp.swift; sourceTree = "<group>"; };
 		369D26BAE0C57D3C4ACB502D /* MomentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCard.swift; sourceTree = "<group>"; };
 		39B31754DF5BA1BDE94FCCC1 /* MomentThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentThread.swift; sourceTree = "<group>"; };
 		4EFBDC3886741A6069B0CE63 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		9B8EC68D4FC2F2F03A9BB5EE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		AF5822C1D322C796BFCB0295 /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
 		B3B64593537A7B14E3B543E4 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
+		BEF2E63673F9DE575B15F6CE /* MarginWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarginWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62D6B5522056F8C2C22797E /* PatternAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternAnalysisView.swift; sourceTree = "<group>"; };
 		C8C721AB18EF5C879C7FA305 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		CD68763182DACE5A056098E5 /* SharedFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFeedView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		16A127491B2EE51223ED291B = {
 			isa = PBXGroup;
 			children = (
+				82B6D9B04D6CCDA46AFABF65 /* MarginWatch */,
 				56598B9D9194DD3B040B842C /* Resources */,
 				66B4655090EBBCCCA90A71BE /* Sources */,
 				8E0AF008E4DCE97B7CC999AD /* Products */,
@@ -108,6 +113,13 @@
 				EAA14B6F01CE30AF86DE955A /* VoiceService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1DA12182BA098E36DBD36BA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		452ED4218813987779AAB678 /* Utilities */ = {
@@ -145,6 +157,14 @@
 			);
 			name = Resources;
 			path = Margin/Resources;
+			sourceTree = "<group>";
+		};
+		57B9FD085477466CAFE402A4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2B05E33E7EEE8E5D87F6A1E3 /* MarginWatchApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		5899268429D23B487DBB17BA /* Models */ = {
@@ -185,12 +205,31 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		82B6D9B04D6CCDA46AFABF65 /* MarginWatch */ = {
+			isa = PBXGroup;
+			children = (
+				017EAFDD200F56525E0F3531 /* Info.plist */,
+				57B9FD085477466CAFE402A4 /* App */,
+				A76B7302632F3CF2504D5D34 /* Models */,
+				1DA12182BA098E36DBD36BA9 /* Views */,
+			);
+			path = MarginWatch;
+			sourceTree = "<group>";
+		};
 		8E0AF008E4DCE97B7CC999AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				15D651C6A1ADBDD45BC9F85C /* Margin.app */,
+				BEF2E63673F9DE575B15F6CE /* MarginWatch.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A76B7302632F3CF2504D5D34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CBC6F0F60CB201545C2F4E12 /* Screens */ = {
@@ -213,6 +252,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8D2ACD38A73B187734A803F6 /* MarginWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B455C2F74B1CC106507F7366 /* Build configuration list for PBXNativeTarget "MarginWatch" */;
+			buildPhases = (
+				CE817146EF5C22CE805479F0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarginWatch;
+			productName = MarginWatch;
+			productReference = BEF2E63673F9DE575B15F6CE /* MarginWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C5C2C05B492FB78A3D70F172 /* Margin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7E081A40BA700709B296A78 /* Build configuration list for PBXNativeTarget "Margin" */;
@@ -243,6 +297,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					8D2ACD38A73B187734A803F6 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
 					C5C2C05B492FB78A3D70F172 = {
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
@@ -266,6 +324,7 @@
 			projectRoot = "";
 			targets = (
 				C5C2C05B492FB78A3D70F172 /* Margin */,
+				8D2ACD38A73B187734A803F6 /* MarginWatch */,
 			);
 		};
 /* End PBXProject section */
@@ -316,6 +375,14 @@
 				A12048539FD24DB36C5884FD /* VoiceService.swift in Sources */,
 				46163401DED6EB1152B29D80 /* WeeklySummary.swift in Sources */,
 				8F48E24217B639A0D78044FE /* WeeklySummaryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE817146EF5C22CE805479F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B5A6500F4C074EF80DBEFB /* MarginWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +449,6 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -443,13 +509,30 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
+		};
+		42184A8496EFFEEC61CB477A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MarginWatch/Info.plist;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marginapp.margin.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
 		};
 		5A2B7CB1FA7FB678A7971FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -475,6 +558,24 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8BEADF5A78975A5F12AAF030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MarginWatch/Info.plist;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marginapp.margin.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -513,6 +614,15 @@
 			buildConfigurations = (
 				022EB0CD6378AB3D933EBF0A /* Debug */,
 				18D73A0F4801B5FB622ED7A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B455C2F74B1CC106507F7366 /* Build configuration list for PBXNativeTarget "MarginWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42184A8496EFFEEC61CB477A /* Debug */,
+				8BEADF5A78975A5F12AAF030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

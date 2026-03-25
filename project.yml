@@ -45,6 +45,24 @@ targets:
         product: SQLite
       - package: SnapKit
 
+  MarginWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - path: MarginWatch
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.marginapp.margin.watchkitapp
+        INFOPLIST_FILE: MarginWatch/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        WATCHOS_DEPLOYMENT_TARGET: "11.0"
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+        SKIP_INSTALL: YES
+
 packages:
   SQLite.swift:
     url: https://github.com/stephencelis/SQLite.swift

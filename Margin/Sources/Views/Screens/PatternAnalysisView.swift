@@ -24,6 +24,19 @@ struct PatternAnalysisView: View {
             .navigationTitle("Patterns")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
+                        LocationPatternsView()
+                    } label: {
+                        HStack(spacing: 4) {
+                            Image(systemName: "mappin.and.ellipse")
+                            Text("Location")
+                        }
+                        .font(MarginFonts.caption)
+                        .foregroundColor(MarginColors.secondaryText)
+                    }
+                }
+
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         Task { await analyzePatterns() }

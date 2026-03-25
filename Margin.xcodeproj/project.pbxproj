@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100B7D77FBE5E28AE89A716F /* LocationPatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE74F53B3BEB502E1F56F482 /* LocationPatternsView.swift */; };
 		119525ADD111B57882606AD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D679F14F1AC98CD88776EB /* Assets.xcassets */; };
 		1E5140A22508E487EE8A734F /* MomentStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E251266E26222CDCF3FF /* MomentStreamView.swift */; };
 		2725E2E2C38C846AE34FF124 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C721AB18EF5C879C7FA305 /* Pattern.swift */; };
@@ -65,6 +66,7 @@
 		9B8EC68D4FC2F2F03A9BB5EE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		AF5822C1D322C796BFCB0295 /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
 		B3B64593537A7B14E3B543E4 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
+		BE74F53B3BEB502E1F56F482 /* LocationPatternsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPatternsView.swift; sourceTree = "<group>"; };
 		BEF2E63673F9DE575B15F6CE /* MarginWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarginWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62D6B5522056F8C2C22797E /* PatternAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternAnalysisView.swift; sourceTree = "<group>"; };
 		C8C721AB18EF5C879C7FA305 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				DCDA48B34D42BD82A71BBCD2 /* CaptureView.swift */,
 				DA7785CD666B5F1255EA187E /* DailyDigestView.swift */,
 				1516E31DCF19B4C801C0ECC9 /* HomeView.swift */,
+				BE74F53B3BEB502E1F56F482 /* LocationPatternsView.swift */,
 				AF5822C1D322C796BFCB0295 /* MomentDetailView.swift */,
 				DC39E251266E26222CDCF3FF /* MomentStreamView.swift */,
 				C62D6B5522056F8C2C22797E /* PatternAnalysisView.swift */,
@@ -370,6 +373,7 @@
 				D17C46A8B15FD5A518232BC6 /* DatabaseService.swift in Sources */,
 				3B15BB0BFF06E9D6D822F3B6 /* DesignSystem.swift in Sources */,
 				D12B9AAAD3230B7005BA5944 /* HomeView.swift in Sources */,
+				100B7D77FBE5E28AE89A716F /* LocationPatternsView.swift in Sources */,
 				32B920F8BE2C38441470F05B /* MarginApp.swift in Sources */,
 				FCD00DC5837FAFBE48520C4E /* MarginEmptyIllustration.swift in Sources */,
 				5609A040324D37268AF35AC9 /* Moment.swift in Sources */,

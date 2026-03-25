@@ -85,21 +85,58 @@ final class AIService {
         return deepScore >= 2 || (deepScore >= 1 && routineScore == 0)
     }
 
-    // MARK: - R2: Thread Detection
+    // MARK: - R2/R7: Thread Detection (enhanced for cross-day threads)
 
     func detectThread(moment: Moment, recentMoments: [Moment]) -> (threadId: UUID, previousMomentId: UUID)? {
-        // Look at recent moments (within last 2 hours) for similar themes
-        let twoHoursAgo = Date().addingTimeInterval(-2 * 60 * 60)
-        let recentRelevant = recentMoments.filter { $0.timestamp > twoHoursAgo && $0.id != moment.id }
+        // R7: Check recent moments (last 7 days) for similar themes
+        let sevenDaysAgo = Date().addingTimeInterval(-7 * 24 * 60 * 60)
+        let recentRelevant = recentMoments.filter { $0.timestamp > sevenDaysAgo && $0.id != moment.id }
 
-        for recent in recentRelevant {
+        // Priority 1: Same-day recent (within 4 hours) - strong continuation
+        let fourHoursAgo = Date().addingTimeInterval(-4 * 60 * 60)
+        for recent in recentRelevant where recent.timestamp > fourHoursAgo {
             if isThreadContinuation(moment.text, previousText: recent.text) {
                 let threadId = recent.threadId ?? recent.id
                 return (threadId, recent.id)
             }
         }
 
+        // Priority 2: Same-day older moments (4-12 hours) - medium continuation
+        let twelveHoursAgo = Date().addingTimeInterval(-12 * 60 * 60)
+        for recent in recentRelevant where recent.timestamp > twelveHoursAgo && recent.timestamp <= fourHoursAgo {
+            if isThreadContinuation(moment.text, previousText: recent.text) && isStrongThreadMatch(moment.text, previousText: recent.text) {
+                let threadId = recent.threadId ?? recent.id
+                return (threadId, recent.id)
+            }
+        }
+
+        // R7 Priority 3: Cross-day thread continuation (1-7 days)
+        let calendar = Calendar.current
+        for recent in recentRelevant {
+            guard recent.timestamp <= twelveHoursAgo else { continue }
+            // Only link across days if it's a very strong match
+            if isStrongThreadMatch(moment.text, previousText: recent.text) {
+                let threadId = recent.threadId ?? recent.id
+                return (threadId, recent.id)
+            }
+        }
+
         return nil
+    }
+
+    /// R7: Stronger match criteria for cross-day linking
+    private func isStrongThreadMatch(_ newText: String, previousText: String) -> Bool {
+        let newWords = Set(newText.lowercased().split(separator: " ").map(String.init))
+        let prevWords = Set(previousText.lowercased().split(separator: " ").map(String.init))
+
+        let stopWords = Set(["the", "a", "an", "is", "are", "was", "were", "i", "you", "he", "she", "it", "we", "they", "to", "and", "or", "but", "in", "on", "at", "for", "of", "with", "my", "your", "this", "that", "what", "how", "when", "be", "have", "has", "had", "do", "did", "does", "not", "just", "about", "so", "if", "as"])
+        let meaningfulNew = newWords.subtracting(stopWords)
+        let meaningfulPrev = prevWords.subtracting(stopWords)
+
+        let overlap = meaningfulNew.intersection(meaningfulPrev)
+
+        // Cross-day requires at least 3 overlapping meaningful words
+        return overlap.count >= 3
     }
 
     private func isThreadContinuation(_ newText: String, previousText: String) -> Bool {
@@ -141,7 +178,7 @@ final class AIService {
         return firstFew
     }
 
-    // MARK: - R2: Location Pattern Insights
+    // MARK: - R2/R7: Location Pattern Insights (privacy-first)
 
     func generateLocationInsight(moments: [Moment]) -> String? {
         let withLocation = moments.filter { $0.locationType != nil }
@@ -156,6 +193,116 @@ final class AIService {
 
         let locationLabel = topLocation.key.capitalized
         return "You think about \(topThought.lowercased()) most when you're at \(locationLabel.lowercased())."
+    }
+
+    // R7: Generate detailed location patterns
+    func generateLocationPatterns(moments: [Moment]) -> [LocationPattern] {
+        let withLocation = moments.filter { $0.locationType != nil && !$0.locationType!.isEmpty }
+        guard withLocation.count >= 5 else { return [] }
+
+        let byLocation = Dictionary(grouping: withLocation) { $0.locationType ?? "unknown" }
+        var patterns: [LocationPattern] = []
+
+        for (locationType, locationMoments) in byLocation {
+            guard locationMoments.count >= 3 else { continue }
+
+            // Extract top thoughts
+            let texts = locationMoments.map { $0.text }
+            let topThoughtStrings = findTopThoughts(from: texts, limit: 3)
+
+            // Find dominant mood
+            let moods = locationMoments.compactMap { $0.moodTag }
+            let dominantMood = Dictionary(grouping: moods) { $0 }.max(by: { $0.value.count < $1.value.count })?.key
+
+            // Find average time of day
+            let timeCounts = Dictionary(grouping: locationMoments) { $0.timeOfDay }.mapValues { $0.count }
+            let avgTime = timeCounts.max(by: { $0.value < $1.value })?.key ?? "unknown"
+
+            let pattern = LocationPattern(
+                locationType: locationType,
+                topThoughts: topThoughtStrings,
+                dominantMood: dominantMood,
+                momentCount: locationMoments.count,
+                averageTimeOfDay: avgTime
+            )
+            patterns.append(pattern)
+        }
+
+        return patterns.sorted { $0.momentCount > $1.momentCount }
+    }
+
+    private func findTopThoughts(from texts: [String], limit: Int) -> [String] {
+        // Find most representative thoughts (longest with least repetition)
+        let scored = texts.map { text -> (String, Int) in
+            let words = Set(text.lowercased().split(separator: " ").map(String.init))
+            let stopWords = Set(["the", "a", "an", "is", "are", "was", "about", "and", "or", "but", "i", "you", "to", "of", "for", "my", "your"])
+            let meaningful = words.subtracting(stopWords)
+            return (text, meaningful.count * 10 - text.count / 10)
+        }
+        return scored.sorted { $0.1 > $1.1 }.prefix(limit).map { $0.0 }
+    }
+
+    // R7: Enhanced weekly narrative
+    func generateWeeklyNarrative(moments: [Moment]) -> String {
+        guard !moments.isEmpty else { return "No moments to narrate this week." }
+
+        let totalMoments = moments.count
+        let deepThoughts = moments.filter { $0.isDeepThought }
+        let withMood = moments.compactMap { $0.moodTag }
+        let withThread = moments.filter { $0.threadId != nil }
+
+        var narrativeParts: [String] = []
+
+        // Opening
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: Date())
+        let dayName = calendar.weekdaySymbols[weekday - 1]
+        narrativeParts.append("This week, you've been paying attention.")
+
+        // Deep thought highlight
+        if deepThoughts.count > 0 {
+            let pct = Int(Double(deepThoughts.count) / Double(totalMoments) * 100)
+            narrativeParts.append("\(deepThoughts.count) moments (\(pct)%) were genuine deep thoughts — where you went somewhere interesting with an idea.")
+        }
+
+        // Mood arc
+        if !withMood.isEmpty {
+            let moodCounts = Dictionary(grouping: withMood) { $0 }.mapValues { $0.count }
+            if let topMood = moodCounts.max(by: { $0.value < $1.value }) {
+                let moodDescriptions: [MoodTag: String] = [
+                    .curious: "Your curiosity kept showing up — you had questions without easy answers.",
+                    .calm: "A calm energy threaded through your week.",
+                    .anxious: "Some tension lingered in the background. That counts as paying attention too.",
+                    .creative: "Creative sparks appeared — ideas trying to become something.",
+                    .nostalgic: "Memory kept reaching back, connecting now to then.",
+                    .hopeful: "Something in you was leaning forward, toward what could be.",
+                    .worried: "You spent time with your worries. That's how you process them.",
+                    .melancholy: "A wistful thread ran through the week.",
+                    .excited: "You felt genuinely excited about something.",
+                    .focused: "Your focus cut through the noise."
+                ]
+                if let desc = moodDescriptions[topMood.key] {
+                    narrativeParts.append(desc)
+                }
+            }
+        }
+
+        // Thread activity
+        if !withThread.isEmpty {
+            let threadCount = Set(withThread.compactMap { $0.threadId }).count
+            narrativeParts.append("\(threadCount) thoughts connected to ongoing threads — ideas that keep circling back.")
+        }
+
+        // Time hotspot
+        let timeGroups = Dictionary(grouping: moments) { $0.timeOfDay }
+        if let topTime = timeGroups.max(by: { $0.value.count < $1.value.count })?.key {
+            narrativeParts.append("Your most reflective time was \(topTime) — that's when the thoughts come easiest.")
+        }
+
+        // Closing
+        narrativeParts.append("Keep capturing. The patterns only reveal themselves to those who look.")
+
+        return narrativeParts.joined(separator: "\n\n")
     }
 
     private func categorizeSimpleThought(_ text: String) -> String {

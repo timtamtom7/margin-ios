@@ -69,6 +69,9 @@ struct WeeklySummaryView: View {
                 // Stats breakdown
                 statsCard(summary)
 
+                // R7: Location patterns
+                locationPatternsCard()
+
                 // Tips
                 tipsCard(summary)
             }
@@ -118,9 +121,49 @@ struct WeeklySummaryView: View {
         .background(MarginColors.surface)
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
-        // Slight rotation for handwritten feel
         .rotationEffect(.degrees(Double.random(in: -0.5...0.5)))
     }
+
+    // R7: Location patterns card in weekly summary
+    @ViewBuilder
+    private func locationPatternsCard() -> some View {
+        let patterns = appState.aiService.generateLocationPatterns(moments: getCachedMoments())
+        if !patterns.isEmpty {
+            VStack(alignment: .leading, spacing: MarginSpacing.md) {
+                HStack {
+                    Image(systemName: "mappin.and.ellipse")
+                        .font(.system(size: 14))
+                        .foregroundColor(MarginColors.accentSecondary)
+                    Text("Where You Thought")
+                        .font(MarginFonts.subheading)
+                        .foregroundColor(MarginColors.primaryText)
+                }
+
+                ForEach(patterns.prefix(3)) { pattern in
+                    HStack {
+                        Text(pattern.locationEmoji)
+                            .font(.system(size: 16))
+                        Text(pattern.locationType.capitalized)
+                            .font(MarginFonts.body)
+                            .foregroundColor(MarginColors.primaryText)
+                        Spacer()
+                        Text("\(pattern.momentCount) moments")
+                            .font(MarginFonts.caption)
+                            .foregroundColor(MarginColors.secondaryText)
+                    }
+                }
+            }
+            .padding(MarginSpacing.lg)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(MarginColors.surface)
+            .cornerRadius(16)
+            .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
+        }
+    }
+
+    // R7: Cached moments for weekly summary
+    @State private var cachedMoments: [Moment] = []
+    private func getCachedMoments() -> [Moment] { cachedMoments }
 
     private func recurringThoughtsCard(_ recurring: [RecurringThought]) -> some View {
         VStack(alignment: .leading, spacing: MarginSpacing.md) {
@@ -330,6 +373,8 @@ struct WeeklySummaryView: View {
         isLoading = true
         do {
             weeklySummary = try await appState.databaseService.fetchWeeklySummary(forWeekContaining: Date())
+            // R7: Also cache moments for location patterns
+            cachedMoments = try await appState.databaseService.fetchAllMoments()
         } catch {
             print("Load weekly summary error: \(error)")
         }
@@ -340,6 +385,7 @@ struct WeeklySummaryView: View {
         isGenerating = true
         do {
             let allMoments = try await appState.databaseService.fetchAllMoments()
+            cachedMoments = allMoments  // R7: Cache for location patterns
             let summary = appState.aiService.generateWeeklySummary(moments: allMoments)
             try await appState.databaseService.saveWeeklySummary(summary)
             weeklySummary = summary

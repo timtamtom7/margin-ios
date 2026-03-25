@@ -18,6 +18,7 @@ final class AppState: ObservableObject {
         case patterns = 2
         case threads = 3  // R2: Threads tab
         case community = 4 // R2: Community tab
+        case groups = 5 // R9: Groups tab
     }
 
     init() {

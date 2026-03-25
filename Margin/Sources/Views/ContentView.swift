@@ -47,6 +47,12 @@ struct ContentView: View {
                         Label("Community", systemImage: "person.3")
                     }
                     .tag(AppState.Tab.community)
+
+                GroupThreadsView()
+                    .tabItem {
+                        Label("Groups", systemImage: "person.2")
+                    }
+                    .tag(AppState.Tab.groups)
             }
             .tint(MarginColors.accent)
 
@@ -86,6 +92,9 @@ struct ContentView: View {
                 }
                 NavigationLink(destination: SharedFeedView()) {
                     Label("Community", systemImage: "person.3")
+                }
+                NavigationLink(destination: GroupThreadsView()) {
+                    Label("Groups", systemImage: "person.2")
                 }
                 NavigationLink(destination: WeeklySummaryView()) {
                     Label("Weekly Summary", systemImage: "calendar")

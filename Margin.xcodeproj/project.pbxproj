@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E98928B98DA0F60BAFBE0E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955AE6CE5479C9C2BB1056C9 /* AppDelegate.swift */; };
 		100B7D77FBE5E28AE89A716F /* LocationPatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE74F53B3BEB502E1F56F482 /* LocationPatternsView.swift */; };
 		119525ADD111B57882606AD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D679F14F1AC98CD88776EB /* Assets.xcassets */; };
+		139B40E2D6BB9BDC2E882212 /* GroupThreadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5458BDD8D72C40B23734E /* GroupThreadsView.swift */; };
 		1E5140A22508E487EE8A734F /* MomentStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E251266E26222CDCF3FF /* MomentStreamView.swift */; };
 		2725E2E2C38C846AE34FF124 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C721AB18EF5C879C7FA305 /* Pattern.swift */; };
 		2B742FD442712266CD21FDEE /* DailyDigestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7785CD666B5F1255EA187E /* DailyDigestView.swift */; };
+		2FB3D1D4E1DF40238BD5C3E0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 421533836758808CC8D1410A /* SQLite */; };
 		2FEAF8555F6201498FB49A7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E55873EEDCDB0580449169 /* ContentView.swift */; };
 		32B920F8BE2C38441470F05B /* MarginApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE0012F72AF8AF5F5DB4A4 /* MarginApp.swift */; };
 		3B15BB0BFF06E9D6D822F3B6 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4916AF7D93CB2C1777DC0 /* DesignSystem.swift */; };
+		42869C9FB1E42A3F4DF5A8AC /* GroupThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07D85CB974EBAE7FD8A1C9E /* GroupThread.swift */; };
 		44743A880B87204C6522F56C /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDA48B34D42BD82A71BBCD2 /* CaptureView.swift */; };
 		46163401DED6EB1152B29D80 /* WeeklySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7515C57029F3A89E8FF7C47A /* WeeklySummary.swift */; };
 		49A20700FEE9AF7977778F3A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B8B55B75CF8806F58243BB58 /* SnapKit */; };
@@ -22,6 +26,8 @@
 		53878F5D8F20B2CB42BBC4A3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0F8B26ADA6951272741BF /* AppState.swift */; };
 		5609A040324D37268AF35AC9 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FCAF048EC46E0C7E22E3E6 /* Moment.swift */; };
 		5B9B738F28FD6A20A098636B /* ContextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093927AD5E6F4617317A8F28 /* ContextService.swift */; };
+		6FC662078A062018C203D7F4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF9156B73516808A5B237FD /* main.swift */; };
+		7437170DF53FF690A76DE613 /* MenuBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0F744832777540B3416B0 /* MenuBarViewController.swift */; };
 		77B5A6500F4C074EF80DBEFB /* MarginWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E33E7EEE8E5D87F6A1E3 /* MarginWatchApp.swift */; };
 		7801DF6D3C869ED9B8DBCAC4 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E680AD656F61C1051E2F26B3 /* ThreadView.swift */; };
 		8F0D9DE7DEDCD4F9D2E7D1B6 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84536039264AB1366AB0C56C /* CaptureButton.swift */; };
@@ -47,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		017EAFDD200F56525E0F3531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		08A0F744832777540B3416B0 /* MenuBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewController.swift; sourceTree = "<group>"; };
 		093927AD5E6F4617317A8F28 /* ContextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextService.swift; sourceTree = "<group>"; };
 		10AC0119187F70698C12975D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		119F6E73A59B39E6C0ACE83C /* AIPromptBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPromptBubble.swift; sourceTree = "<group>"; };
@@ -61,8 +68,10 @@
 		68D679F14F1AC98CD88776EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744DB1FDE0FDD587671E8ED8 /* DailyDigestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDigestCard.swift; sourceTree = "<group>"; };
 		7515C57029F3A89E8FF7C47A /* WeeklySummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummary.swift; sourceTree = "<group>"; };
+		7FF9156B73516808A5B237FD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		83A85F5F607959BF3B9CB73C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		84536039264AB1366AB0C56C /* CaptureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureButton.swift; sourceTree = "<group>"; };
+		955AE6CE5479C9C2BB1056C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B8EC68D4FC2F2F03A9BB5EE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		AF5822C1D322C796BFCB0295 /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
 		B3B64593537A7B14E3B543E4 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
@@ -74,10 +83,13 @@
 		D2B20D5E293FEDACC4E93EB1 /* MarginEmptyIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginEmptyIllustration.swift; sourceTree = "<group>"; };
 		D2FFB38DBD3C7F53AB603FBD /* DailyDigest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDigest.swift; sourceTree = "<group>"; };
 		D4FE0012F72AF8AF5F5DB4A4 /* MarginApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginApp.swift; sourceTree = "<group>"; };
+		D9B5458BDD8D72C40B23734E /* GroupThreadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupThreadsView.swift; sourceTree = "<group>"; };
 		DA7785CD666B5F1255EA187E /* DailyDigestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDigestView.swift; sourceTree = "<group>"; };
 		DC39E251266E26222CDCF3FF /* MomentStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentStreamView.swift; sourceTree = "<group>"; };
 		DCDA48B34D42BD82A71BBCD2 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		E07D85CB974EBAE7FD8A1C9E /* GroupThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupThread.swift; sourceTree = "<group>"; };
 		E680AD656F61C1051E2F26B3 /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
+		E86B1D4CF51ED825357F8DB2 /* MarginMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarginMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA14B6F01CE30AF86DE955A /* VoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceService.swift; sourceTree = "<group>"; };
 		ED8AC43BA6A042763079AA71 /* PatternCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternCard.swift; sourceTree = "<group>"; };
 		F3FCAF048EC46E0C7E22E3E6 /* Moment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
@@ -86,6 +98,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8E4C19E16D6244568161ACE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FB3D1D4E1DF40238BD5C3E0 /* SQLite in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5FE32646F84CFD7A34DE996 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +124,7 @@
 				82B6D9B04D6CCDA46AFABF65 /* MarginWatch */,
 				56598B9D9194DD3B040B842C /* Resources */,
 				66B4655090EBBCCCA90A71BE /* Sources */,
+				89751EFCAFD99DDADCC53634 /* Sources */,
 				8E0AF008E4DCE97B7CC999AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				D2FFB38DBD3C7F53AB603FBD /* DailyDigest.swift */,
+				E07D85CB974EBAE7FD8A1C9E /* GroupThread.swift */,
 				F3FCAF048EC46E0C7E22E3E6 /* Moment.swift */,
 				39B31754DF5BA1BDE94FCCC1 /* MomentThread.swift */,
 				C8C721AB18EF5C879C7FA305 /* Pattern.swift */,
@@ -221,10 +243,22 @@
 			path = MarginWatch;
 			sourceTree = "<group>";
 		};
+		89751EFCAFD99DDADCC53634 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				955AE6CE5479C9C2BB1056C9 /* AppDelegate.swift */,
+				7FF9156B73516808A5B237FD /* main.swift */,
+				08A0F744832777540B3416B0 /* MenuBarViewController.swift */,
+			);
+			name = Sources;
+			path = MarginMenuBar/Sources;
+			sourceTree = "<group>";
+		};
 		8E0AF008E4DCE97B7CC999AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				15D651C6A1ADBDD45BC9F85C /* Margin.app */,
+				E86B1D4CF51ED825357F8DB2 /* MarginMenuBar.app */,
 				BEF2E63673F9DE575B15F6CE /* MarginWatch.app */,
 			);
 			name = Products;
@@ -242,6 +276,7 @@
 			children = (
 				DCDA48B34D42BD82A71BBCD2 /* CaptureView.swift */,
 				DA7785CD666B5F1255EA187E /* DailyDigestView.swift */,
+				D9B5458BDD8D72C40B23734E /* GroupThreadsView.swift */,
 				1516E31DCF19B4C801C0ECC9 /* HomeView.swift */,
 				BE74F53B3BEB502E1F56F482 /* LocationPatternsView.swift */,
 				AF5822C1D322C796BFCB0295 /* MomentDetailView.swift */,
@@ -266,6 +301,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		10F7424A362A8E26F640B00B /* MarginMenuBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A2A8BC1649AE05C068A33F /* Build configuration list for PBXNativeTarget "MarginMenuBar" */;
+			buildPhases = (
+				B58B241DDC61CDA29AAC66C2 /* Sources */,
+				8E4C19E16D6244568161ACE8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarginMenuBar;
+			packageProductDependencies = (
+				421533836758808CC8D1410A /* SQLite */,
+			);
+			productName = MarginMenuBar;
+			productReference = E86B1D4CF51ED825357F8DB2 /* MarginMenuBar.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8D2ACD38A73B187734A803F6 /* MarginWatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B455C2F74B1CC106507F7366 /* Build configuration list for PBXNativeTarget "MarginWatch" */;
@@ -311,6 +365,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					10F7424A362A8E26F640B00B = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
 					8D2ACD38A73B187734A803F6 = {
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
@@ -338,6 +396,7 @@
 			projectRoot = "";
 			targets = (
 				C5C2C05B492FB78A3D70F172 /* Margin */,
+				10F7424A362A8E26F640B00B /* MarginMenuBar */,
 				8D2ACD38A73B187734A803F6 /* MarginWatch */,
 			);
 		};
@@ -372,6 +431,8 @@
 				2B742FD442712266CD21FDEE /* DailyDigestView.swift in Sources */,
 				D17C46A8B15FD5A518232BC6 /* DatabaseService.swift in Sources */,
 				3B15BB0BFF06E9D6D822F3B6 /* DesignSystem.swift in Sources */,
+				42869C9FB1E42A3F4DF5A8AC /* GroupThread.swift in Sources */,
+				139B40E2D6BB9BDC2E882212 /* GroupThreadsView.swift in Sources */,
 				D12B9AAAD3230B7005BA5944 /* HomeView.swift in Sources */,
 				100B7D77FBE5E28AE89A716F /* LocationPatternsView.swift in Sources */,
 				32B920F8BE2C38441470F05B /* MarginApp.swift in Sources */,
@@ -391,6 +452,16 @@
 				A12048539FD24DB36C5884FD /* VoiceService.swift in Sources */,
 				46163401DED6EB1152B29D80 /* WeeklySummary.swift in Sources */,
 				8F48E24217B639A0D78044FE /* WeeklySummaryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B58B241DDC61CDA29AAC66C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E98928B98DA0F60BAFBE0E5 /* AppDelegate.swift in Sources */,
+				7437170DF53FF690A76DE613 /* MenuBarViewController.swift in Sources */,
+				6FC662078A062018C203D7F4 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +632,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Margin;
+				INFOPLIST_KEY_CFBundleURLTypes = "<array>\n  <dict>\n    <key>CFBundleURLSchemes</key>\n    <array><string>margin</string></array>\n  </dict>\n</array>\n";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Margin uses your location to understand the context of your moments — e.g., 'at the coffee shop' or 'at home'.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Margin uses the microphone to capture your voice thoughts.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Margin can save your moment insights as images.";
@@ -574,6 +646,46 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5BEBA5888168FEADE77806CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MarginMenuBar/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marginapp.margin.menubar;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		641B87BECACE782A3EB50764 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MarginMenuBar/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marginapp.margin.menubar;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -606,6 +718,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Margin;
+				INFOPLIST_KEY_CFBundleURLTypes = "<array>\n  <dict>\n    <key>CFBundleURLSchemes</key>\n    <array><string>margin</string></array>\n  </dict>\n</array>\n";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Margin uses your location to understand the context of your moments — e.g., 'at the coffee shop' or 'at home'.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Margin uses the microphone to capture your voice thoughts.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Margin can save your moment insights as images.";
@@ -630,6 +743,15 @@
 			buildConfigurations = (
 				022EB0CD6378AB3D933EBF0A /* Debug */,
 				18D73A0F4801B5FB622ED7A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		04A2A8BC1649AE05C068A33F /* Build configuration list for PBXNativeTarget "MarginMenuBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BEBA5888168FEADE77806CF /* Debug */,
+				641B87BECACE782A3EB50764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -674,6 +796,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		421533836758808CC8D1410A /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 497A56B3E0AC0A7BDFCD9FD8 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
 		6500659B211EF754F62DD035 /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 497A56B3E0AC0A7BDFCD9FD8 /* XCRemoteSwiftPackageReference "SQLite.swift" */;

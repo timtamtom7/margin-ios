@@ -40,6 +40,13 @@ targets:
         DEVELOPMENT_TEAM: ""
         SWIFT_EMIT_LOC_STRINGS: YES
         GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleURLTypes: |
+          <array>
+            <dict>
+              <key>CFBundleURLSchemes</key>
+              <array><string>margin</string></array>
+            </dict>
+          </array>
     dependencies:
       - package: SQLite.swift
         product: SQLite
@@ -62,6 +69,29 @@ targets:
         DEVELOPMENT_TEAM: ""
         CODE_SIGN_STYLE: Automatic
         SKIP_INSTALL: YES
+
+  MarginMenuBar:
+    type: application
+    platform: macOS
+    sources:
+      - path: MarginMenuBar/Sources
+        type: group
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.marginapp.margin.menubar
+        INFOPLIST_FILE: MarginMenuBar/Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_EMIT_LOC_STRINGS: YES
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+        ENABLE_HARDENED_RUNTIME: YES
+    dependencies:
+      - package: SQLite.swift
+        product: SQLite
 
 packages:
   SQLite.swift:

@@ -154,6 +154,12 @@ struct CaptureView: View {
         .sheet(isPresented: $showMoodSelector) {
             MoodSelectorSheet(selectedMood: $detectedMood)
         }
+        .sheet(isPresented: Binding(
+            get: { appState.subscriptionManager.showPaywall },
+            set: { appState.subscriptionManager.showPaywall = $0 }
+        )) {
+            PaywallView(subscriptionManager: appState.subscriptionManager)
+        }
     }
 
     private var voiceInputView: some View {
@@ -303,6 +309,12 @@ struct CaptureView: View {
     private func submitMoment() {
         guard !textInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
 
+        // R10: Check subscription tier limit before saving
+        if !appState.subscriptionManager.checkCaptureAllowed() {
+            appState.subscriptionManager.showPaywall = true
+            return
+        }
+
         isProcessing = true
         let context = appState.contextService.inferContext(from: Date())
 
@@ -345,6 +357,9 @@ struct CaptureView: View {
         Task {
             do {
                 try await appState.databaseService.saveMoment(moment)
+
+                // R10: Record this moment against the free tier
+                appState.subscriptionManager.recordMomentCapture()
 
                 // R2: If this started a new thread, save it
                 if let tid = threadId, previousMomentId == nil {

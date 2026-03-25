@@ -21,6 +21,10 @@ struct HomeView: View {
                         // R2: Weekly summary banner
                         weeklySummaryBanner
 
+                        // R10: Free tier meter / Upgrade prompt
+                        freeTierMeter
+                            .padding(.horizontal, MarginSpacing.lg)
+
                         if let digest = todayDigest {
                             DailyDigestCard(digest: digest)
                                 .padding(.horizontal, MarginSpacing.lg)
@@ -99,6 +103,12 @@ struct HomeView: View {
             .sheet(isPresented: $showingWeeklySummary) {
                 WeeklySummaryView()
             }
+            .sheet(isPresented: Binding(
+                get: { appState.subscriptionManager.showPaywall },
+                set: { appState.subscriptionManager.showPaywall = $0 }
+            )) {
+                PaywallView(subscriptionManager: appState.subscriptionManager)
+            }
         }
         .task {
             await loadData()
@@ -133,6 +143,58 @@ struct HomeView: View {
             .background(MarginColors.surface)
             .cornerRadius(12)
             .padding(.horizontal, MarginSpacing.lg)
+        }
+    }
+
+    // R10: Free tier meter
+    @ViewBuilder
+    private var freeTierMeter: some View {
+        if appState.subscriptionManager.isSubscribed {
+            HStack(spacing: MarginSpacing.sm) {
+                Image(systemName: "checkmark.seal.fill")
+                    .foregroundColor(MarginColors.accentSecondary)
+                Text("Pro — unlimited moments")
+                    .font(MarginFonts.caption)
+                    .foregroundColor(MarginColors.accentSecondary)
+                Spacer()
+            }
+            .padding(MarginSpacing.sm)
+        } else {
+            VStack(spacing: MarginSpacing.sm) {
+                HStack {
+                    Text("Free tier")
+                        .font(MarginFonts.caption)
+                        .foregroundColor(MarginColors.secondaryText)
+                    Spacer()
+                    Text(appState.subscriptionManager.momentsUsedText)
+                        .font(MarginFonts.caption)
+                        .foregroundColor(appState.subscriptionManager.isNearLimit ? MarginColors.destructive : MarginColors.secondaryText)
+                }
+
+                GeometryReader { geometry in
+                    ZStack(alignment: .leading) {
+                        Rectangle()
+                            .fill(MarginColors.divider)
+                            .frame(height: 4)
+                            .cornerRadius(2)
+
+                        Rectangle()
+                            .fill(appState.subscriptionManager.isNearLimit ? MarginColors.destructive : MarginColors.accent)
+                            .frame(width: geometry.size.width * appState.subscriptionManager.freeTierProgress, height: 4)
+                            .cornerRadius(2)
+                    }
+                }
+                .frame(height: 4)
+
+                if appState.subscriptionManager.isNearLimit {
+                    UpgradePromptBanner(subscriptionManager: appState.subscriptionManager) {
+                        appState.subscriptionManager.showPaywall = true
+                    }
+                }
+            }
+            .padding(MarginSpacing.md)
+            .background(MarginColors.surface)
+            .cornerRadius(12)
         }
     }
 

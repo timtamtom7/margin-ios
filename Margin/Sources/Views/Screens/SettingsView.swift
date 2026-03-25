@@ -113,11 +113,60 @@ struct SettingsView: View {
                         HStack {
                             Text("Build")
                             Spacer()
-                            Text("R2")
+                            Text("R10")
                                 .foregroundColor(MarginColors.secondaryText)
                         }
                     } header: {
                         Text("About")
+                    }
+
+                    // R10: Subscription section
+                    Section {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Current Plan")
+                                    .font(MarginFonts.body)
+                                Text(appState.subscriptionManager.isSubscribed ? "Pro" : "Free — \(appState.subscriptionManager.momentsRemaining) moments left")
+                                    .font(MarginFonts.caption)
+                                    .foregroundColor(appState.subscriptionManager.isSubscribed ? MarginColors.accentSecondary : MarginColors.secondaryText)
+                            }
+
+                            Spacer()
+
+                            if !appState.subscriptionManager.isSubscribed {
+                                Button("Upgrade") {
+                                    appState.subscriptionManager.showPaywall = true
+                                }
+                                .font(MarginFonts.caption)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(MarginColors.accent)
+                                .cornerRadius(12)
+                            }
+                        }
+
+                        if appState.subscriptionManager.isSubscribed {
+                            Button(role: .destructive) {
+                                appState.subscriptionManager.cancelSubscription()
+                            } label: {
+                                Text("Cancel Subscription")
+                            }
+                        } else {
+                            Button {
+                                Task {
+                                    await appState.subscriptionManager.restorePurchases()
+                                }
+                            } label: {
+                                Text("Restore Purchases")
+                            }
+                        }
+                    } header: {
+                        Text("Subscription")
+                    } footer: {
+                        if !appState.subscriptionManager.isSubscribed {
+                            Text("Free tier: 20 moments per month. Pro: unlimited moments.")
+                        }
                     }
 
                     Section {

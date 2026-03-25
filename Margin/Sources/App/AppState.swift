@@ -11,6 +11,7 @@ final class AppState: ObservableObject {
     let aiService: AIService
     let voiceService: VoiceService
     let contextService: ContextService
+    let subscriptionManager: SubscriptionManager // R10
 
     enum Tab: Int, CaseIterable {
         case home = 0
@@ -26,5 +27,6 @@ final class AppState: ObservableObject {
         self.aiService = AIService()
         self.voiceService = VoiceService()
         self.contextService = ContextService()
+        self.subscriptionManager = SubscriptionManager()
     }
 }

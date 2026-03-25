@@ -76,9 +76,7 @@ struct MomentStreamView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: MarginSpacing.lg) {
-            Image(systemName: "list.bullet.rectangle")
-                .font(.system(size: 48))
-                .foregroundColor(MarginColors.divider)
+            MarginEmptyIllustration(size: 160)
 
             Text("Your moments will appear here")
                 .font(MarginFonts.subheading)

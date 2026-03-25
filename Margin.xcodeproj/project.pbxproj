@@ -41,6 +41,7 @@
 		DD2329762D9620BE1E769804 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8EC68D4FC2F2F03A9BB5EE /* ViewExtensions.swift */; };
 		EAB7F7213DAEB5D4951BCD1E /* MomentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5822C1D322C796BFCB0295 /* MomentDetailView.swift */; };
 		F6F00E620AF47AFACFF4AA71 /* MomentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369D26BAE0C57D3C4ACB502D /* MomentCard.swift */; };
+		FCD00DC5837FAFBE48520C4E /* MarginEmptyIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B20D5E293FEDACC4E93EB1 /* MarginEmptyIllustration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		C62D6B5522056F8C2C22797E /* PatternAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternAnalysisView.swift; sourceTree = "<group>"; };
 		C8C721AB18EF5C879C7FA305 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		CD68763182DACE5A056098E5 /* SharedFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFeedView.swift; sourceTree = "<group>"; };
+		D2B20D5E293FEDACC4E93EB1 /* MarginEmptyIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginEmptyIllustration.swift; sourceTree = "<group>"; };
 		D2FFB38DBD3C7F53AB603FBD /* DailyDigest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDigest.swift; sourceTree = "<group>"; };
 		D4FE0012F72AF8AF5F5DB4A4 /* MarginApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginApp.swift; sourceTree = "<group>"; };
 		DA7785CD666B5F1255EA187E /* DailyDigestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDigestView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				4EFF310522BE70B3D70BB229 /* App */,
+				E3F6284F8AFCFD011789D1D7 /* Components */,
 				5899268429D23B487DBB17BA /* Models */,
 				17EBDDCAA9A6441F963F3A7C /* Services */,
 				452ED4218813987779AAB678 /* Utilities */,
@@ -247,6 +250,14 @@
 				B3B64593537A7B14E3B543E4 /* WeeklySummaryView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		E3F6284F8AFCFD011789D1D7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D2B20D5E293FEDACC4E93EB1 /* MarginEmptyIllustration.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				3B15BB0BFF06E9D6D822F3B6 /* DesignSystem.swift in Sources */,
 				D12B9AAAD3230B7005BA5944 /* HomeView.swift in Sources */,
 				32B920F8BE2C38441470F05B /* MarginApp.swift in Sources */,
+				FCD00DC5837FAFBE48520C4E /* MarginEmptyIllustration.swift in Sources */,
 				5609A040324D37268AF35AC9 /* Moment.swift in Sources */,
 				F6F00E620AF47AFACFF4AA71 /* MomentCard.swift in Sources */,
 				EAB7F7213DAEB5D4951BCD1E /* MomentDetailView.swift in Sources */,

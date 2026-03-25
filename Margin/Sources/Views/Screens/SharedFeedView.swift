@@ -108,9 +108,7 @@ struct SharedFeedView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: MarginSpacing.lg) {
-            Image(systemName: "person.3")
-                .font(.system(size: 48))
-                .foregroundColor(MarginColors.divider)
+            MarginEmptyIllustration(size: 160)
 
             Text("No shared moments yet")
                 .font(MarginFonts.subheading)

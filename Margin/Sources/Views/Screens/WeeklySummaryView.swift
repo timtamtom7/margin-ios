@@ -294,9 +294,7 @@ struct WeeklySummaryView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: MarginSpacing.lg) {
-            Image(systemName: "calendar")
-                .font(.system(size: 48))
-                .foregroundColor(MarginColors.divider)
+            MarginEmptyIllustration(size: 160)
 
             Text("No weekly summary yet")
                 .font(MarginFonts.subheading)

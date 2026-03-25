@@ -178,9 +178,7 @@ struct ThreadView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: MarginSpacing.lg) {
-            Image(systemName: "link.badge.plus")
-                .font(.system(size: 48))
-                .foregroundColor(MarginColors.divider)
+            MarginEmptyIllustration(size: 140)
 
             Text("Thread not found")
                 .font(MarginFonts.subheading)

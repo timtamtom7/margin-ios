@@ -73,9 +73,7 @@ struct PatternAnalysisView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: MarginSpacing.lg) {
-            Image(systemName: "sparkles")
-                .font(.system(size: 48))
-                .foregroundColor(MarginColors.divider)
+            MarginEmptyIllustration(size: 160)
 
             Text("Patterns emerge over time")
                 .font(MarginFonts.subheading)

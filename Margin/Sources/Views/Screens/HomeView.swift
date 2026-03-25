@@ -138,9 +138,7 @@ struct HomeView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: MarginSpacing.lg) {
-            Image(systemName: "square.stack.3d.up")
-                .font(.system(size: 48))
-                .foregroundColor(MarginColors.divider)
+            MarginEmptyIllustration(size: 180)
 
             Text("No moments yet")
                 .font(MarginFonts.subheading)

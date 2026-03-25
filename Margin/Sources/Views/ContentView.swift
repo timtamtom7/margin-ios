@@ -225,9 +225,7 @@ struct ThreadsListView: View {
 
     private var emptyStateView: some View {
         VStack(spacing: MarginSpacing.lg) {
-            Image(systemName: "link")
-                .font(.system(size: 48))
-                .foregroundColor(MarginColors.divider)
+            MarginEmptyIllustration(size: 160)
 
             Text("No threads yet")
                 .font(MarginFonts.subheading)

@@ -72,8 +72,15 @@ final class DatabaseService {
 
     private func setupDatabase() {
         do {
-            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-            db = try Connection("\(path)/margin.sqlite3")
+            let documentsPath: String
+            if let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
+                documentsPath = path
+            } else if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                documentsPath = url.path
+            } else {
+                documentsPath = NSTemporaryDirectory()
+            }
+            db = try Connection("\(documentsPath)/margin.sqlite3")
             try createTables()
         } catch {
             print("Database setup error: \(error)")
@@ -208,7 +215,7 @@ final class DatabaseService {
         guard let db = db else { return [] }
         let calendar = Calendar.current
         let startOfDay = calendar.startOfDay(for: dateValue)
-        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) ?? startOfDay
         let query = moments.filter(timestamp >= startOfDay && timestamp < endOfDay).order(timestamp.desc)
         var result: [Moment] = []
         for row in try db.prepare(query) {
@@ -290,7 +297,7 @@ final class DatabaseService {
 
     func markAbandonedThreads(daysThreshold: Int = 3) throws {
         guard let db = db else { return }
-        let thresholdDate = Calendar.current.date(byAdding: .day, value: -daysThreshold, to: Date())!
+        let thresholdDate = Calendar.current.date(byAdding: .day, value: -daysThreshold, to: Date()) ?? Date()
         // Find threads not updated in threshold days
         let oldThreads = try db.prepare(threads.filter(lastUpdatedAt < thresholdDate && isActive == true))
         for threadRow in oldThreads {
@@ -351,7 +358,7 @@ final class DatabaseService {
         guard let db = db else { return nil }
         let calendar = Calendar.current
         let startOfDay = calendar.startOfDay(for: dateValue)
-        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) ?? startOfDay
         let query = dailyDigests.filter(date >= startOfDay && date < endOfDay)
         for row in try db.prepare(query) {
             return DailyDigest(
@@ -458,7 +465,7 @@ final class DatabaseService {
         let calendar = Calendar.current
         let weekday = calendar.component(.weekday, from: dateValue)
         let daysFromMonday = (weekday + 5) % 7
-        let weekStart = calendar.date(byAdding: .day, value: -daysFromMonday, to: calendar.startOfDay(for: dateValue))!
+        let weekStart = calendar.date(byAdding: .day, value: -daysFromMonday, to: calendar.startOfDay(for: dateValue)) ?? Date()
 
         let query = weeklySummaries.filter(weekStartDate == weekStart)
         for row in try db.prepare(query) {

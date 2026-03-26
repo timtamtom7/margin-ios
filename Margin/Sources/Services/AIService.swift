@@ -461,8 +461,8 @@ final class AIService {
         let today = Date()
         let weekday = calendar.component(.weekday, from: today)
         let daysFromMonday = (weekday + 5) % 7
-        let weekStart = calendar.date(byAdding: .day, value: -daysFromMonday, to: calendar.startOfDay(for: today))!
-        let weekEnd = calendar.date(byAdding: .day, value: 6, to: weekStart)!
+        let weekStart = calendar.date(byAdding: .day, value: -daysFromMonday, to: calendar.startOfDay(for: today)) ?? Date()
+        let weekEnd = calendar.date(byAdding: .day, value: 6, to: weekStart) ?? Date()
 
         let weekMoments = moments.filter { $0.timestamp >= weekStart && $0.timestamp <= weekEnd }
 

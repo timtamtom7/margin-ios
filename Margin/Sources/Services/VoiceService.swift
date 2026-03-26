@@ -76,7 +76,7 @@ final class VoiceService: ObservableObject {
             return
         }
 
-        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first ?? URL(fileURLWithPath: NSTemporaryDirectory())
         let audioFilename = documentsPath.appendingPathComponent("\(UUID().uuidString).m4a")
         recordingURL = audioFilename
 

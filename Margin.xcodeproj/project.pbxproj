@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		05DC5900EEA0AA1A3669FA46 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB166E964DFD06ECB3AF3154 /* SubscriptionManager.swift */; };
+		074963736442956EF5504811 /* AppleIntelligenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1D54BB1817730FF964404 /* AppleIntelligenceService.swift */; };
 		0E98928B98DA0F60BAFBE0E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955AE6CE5479C9C2BB1056C9 /* AppDelegate.swift */; };
 		100B7D77FBE5E28AE89A716F /* LocationPatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE74F53B3BEB502E1F56F482 /* LocationPatternsView.swift */; };
 		119525ADD111B57882606AD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D679F14F1AC98CD88776EB /* Assets.xcassets */; };
+		12C8C4192E5B374277C3D2C0 /* MarginR11Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55DC811A25EFC28A61CDA8 /* MarginR11Service.swift */; };
 		139B40E2D6BB9BDC2E882212 /* GroupThreadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B5458BDD8D72C40B23734E /* GroupThreadsView.swift */; };
 		1E5140A22508E487EE8A734F /* MomentStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC39E251266E26222CDCF3FF /* MomentStreamView.swift */; };
 		2725E2E2C38C846AE34FF124 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C721AB18EF5C879C7FA305 /* Pattern.swift */; };
+		2ACCBEF6AF098B0A7B4F61B6 /* SpatialGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AB3805BF68ECF6200CD0E5 /* SpatialGalleryView.swift */; };
 		2B742FD442712266CD21FDEE /* DailyDigestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7785CD666B5F1255EA187E /* DailyDigestView.swift */; };
 		2FB3D1D4E1DF40238BD5C3E0 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 421533836758808CC8D1410A /* SQLite */; };
 		2FEAF8555F6201498FB49A7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E55873EEDCDB0580449169 /* ContentView.swift */; };
@@ -27,6 +30,7 @@
 		53878F5D8F20B2CB42BBC4A3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B0F8B26ADA6951272741BF /* AppState.swift */; };
 		5609A040324D37268AF35AC9 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FCAF048EC46E0C7E22E3E6 /* Moment.swift */; };
 		5B9B738F28FD6A20A098636B /* ContextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093927AD5E6F4617317A8F28 /* ContextService.swift */; };
+		6C60B2380861D58A7D6D2C85 /* RetentionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A132BE87BB9C4F13C8B49 /* RetentionService.swift */; };
 		6FC662078A062018C203D7F4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF9156B73516808A5B237FD /* main.swift */; };
 		7437170DF53FF690A76DE613 /* MenuBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0F744832777540B3416B0 /* MenuBarViewController.swift */; };
 		77B5A6500F4C074EF80DBEFB /* MarginWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E33E7EEE8E5D87F6A1E3 /* MarginWatchApp.swift */; };
@@ -63,10 +67,12 @@
 		15D651C6A1ADBDD45BC9F85C /* Margin.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Margin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B0F8B26ADA6951272741BF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2B05E33E7EEE8E5D87F6A1E3 /* MarginWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginWatchApp.swift; sourceTree = "<group>"; };
+		302A132BE87BB9C4F13C8B49 /* RetentionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetentionService.swift; sourceTree = "<group>"; };
 		369D26BAE0C57D3C4ACB502D /* MomentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentCard.swift; sourceTree = "<group>"; };
 		39B31754DF5BA1BDE94FCCC1 /* MomentThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentThread.swift; sourceTree = "<group>"; };
 		4EFBDC3886741A6069B0CE63 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
 		58E55873EEDCDB0580449169 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5D55DC811A25EFC28A61CDA8 /* MarginR11Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginR11Service.swift; sourceTree = "<group>"; };
 		68D679F14F1AC98CD88776EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744DB1FDE0FDD587671E8ED8 /* DailyDigestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDigestCard.swift; sourceTree = "<group>"; };
 		7515C57029F3A89E8FF7C47A /* WeeklySummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummary.swift; sourceTree = "<group>"; };
@@ -76,10 +82,12 @@
 		955AE6CE5479C9C2BB1056C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95BD851D63242B39E0F54D92 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		9B8EC68D4FC2F2F03A9BB5EE /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		A6AB3805BF68ECF6200CD0E5 /* SpatialGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialGalleryView.swift; sourceTree = "<group>"; };
 		AF5822C1D322C796BFCB0295 /* MomentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetailView.swift; sourceTree = "<group>"; };
 		B3B64593537A7B14E3B543E4 /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
 		BE74F53B3BEB502E1F56F482 /* LocationPatternsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPatternsView.swift; sourceTree = "<group>"; };
 		BEF2E63673F9DE575B15F6CE /* MarginWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarginWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1D1D54BB1817730FF964404 /* AppleIntelligenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIntelligenceService.swift; sourceTree = "<group>"; };
 		C62D6B5522056F8C2C22797E /* PatternAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternAnalysisView.swift; sourceTree = "<group>"; };
 		C8C721AB18EF5C879C7FA305 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		CB166E964DFD06ECB3AF3154 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
@@ -137,8 +145,11 @@
 			isa = PBXGroup;
 			children = (
 				4EFBDC3886741A6069B0CE63 /* AIService.swift */,
+				C1D1D54BB1817730FF964404 /* AppleIntelligenceService.swift */,
 				093927AD5E6F4617317A8F28 /* ContextService.swift */,
 				10AC0119187F70698C12975D /* DatabaseService.swift */,
+				5D55DC811A25EFC28A61CDA8 /* MarginR11Service.swift */,
+				302A132BE87BB9C4F13C8B49 /* RetentionService.swift */,
 				CB166E964DFD06ECB3AF3154 /* SubscriptionManager.swift */,
 				EAA14B6F01CE30AF86DE955A /* VoiceService.swift */,
 			);
@@ -174,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				58E55873EEDCDB0580449169 /* ContentView.swift */,
+				A6AB3805BF68ECF6200CD0E5 /* SpatialGalleryView.swift */,
 				750BC5848A151F2700DEB530 /* Components */,
 				CBC6F0F60CB201545C2F4E12 /* Screens */,
 			);
@@ -427,6 +439,7 @@
 				9158E885DAC2F7985C86C6A9 /* AIPromptBubble.swift in Sources */,
 				B234EE2578893681E3811980 /* AIService.swift in Sources */,
 				53878F5D8F20B2CB42BBC4A3 /* AppState.swift in Sources */,
+				074963736442956EF5504811 /* AppleIntelligenceService.swift in Sources */,
 				8F0D9DE7DEDCD4F9D2E7D1B6 /* CaptureButton.swift in Sources */,
 				44743A880B87204C6522F56C /* CaptureView.swift in Sources */,
 				2FEAF8555F6201498FB49A7F /* ContentView.swift in Sources */,
@@ -443,6 +456,7 @@
 				100B7D77FBE5E28AE89A716F /* LocationPatternsView.swift in Sources */,
 				32B920F8BE2C38441470F05B /* MarginApp.swift in Sources */,
 				FCD00DC5837FAFBE48520C4E /* MarginEmptyIllustration.swift in Sources */,
+				12C8C4192E5B374277C3D2C0 /* MarginR11Service.swift in Sources */,
 				5609A040324D37268AF35AC9 /* Moment.swift in Sources */,
 				F6F00E620AF47AFACFF4AA71 /* MomentCard.swift in Sources */,
 				EAB7F7213DAEB5D4951BCD1E /* MomentDetailView.swift in Sources */,
@@ -452,8 +466,10 @@
 				CA8FE1DC1A25DECC62175E9F /* PatternAnalysisView.swift in Sources */,
 				9BE9D1C9072494CCD987AC63 /* PatternCard.swift in Sources */,
 				F42A7AFF7DD1E06B1BBB6BF0 /* PaywallView.swift in Sources */,
+				6C60B2380861D58A7D6D2C85 /* RetentionService.swift in Sources */,
 				D8FEEA32DA3A1F79020A74D0 /* SettingsView.swift in Sources */,
 				94FE78AC42365192EB3268B9 /* SharedFeedView.swift in Sources */,
+				2ACCBEF6AF098B0A7B4F61B6 /* SpatialGalleryView.swift in Sources */,
 				05DC5900EEA0AA1A3669FA46 /* SubscriptionManager.swift in Sources */,
 				7801DF6D3C869ED9B8DBCAC4 /* ThreadView.swift in Sources */,
 				DD2329762D9620BE1E769804 /* ViewExtensions.swift in Sources */,

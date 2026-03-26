@@ -1,18 +1,40 @@
 import Foundation
 import StoreKit
 
-// R10: Subscription Manager — free tier (20 moments/month) and Pro tier (unlimited)
+// R13: Subscription Manager — free tier (20 moments/month), Pro ($7.99), Complete ($14.99)
 @MainActor
 final class SubscriptionManager: ObservableObject {
-    enum SubscriptionTier: String, Codable {
+    enum SubscriptionTier: String, Codable, CaseIterable {
         case free = "free"
         case pro = "pro"
+        case complete = "complete"
 
         var momentLimit: Int? { nil }  // nil = unlimited
         var displayName: String {
             switch self {
             case .free: return "Free"
             case .pro: return "Pro"
+            case .complete: return "Complete"
+            }
+        }
+
+        // R13: Updated pricing
+        var price: String {
+            switch self {
+            case .free: return "Free"
+            case .pro: return "$7.99/mo"
+            case .complete: return "$14.99/mo"
+            }
+        }
+
+        var features: [String] {
+            switch self {
+            case .free:
+                return ["20 moments/month", "Basic patterns", "7-day history"]
+            case .pro:
+                return ["Unlimited moments", "Advanced patterns", "Voice-to-moment", "AI briefings", "30-day history"]
+            case .complete:
+                return ["Everything in Pro", "Lifetime history", "Priority AI", "Export data", "Widgets"]
             }
         }
 

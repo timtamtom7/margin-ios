@@ -58,7 +58,6 @@ final class MarginR11Service: ObservableObject {
 
     func createGroup(name: String, maxMembers: Int = 20) -> MarginGroup {
         MarginGroup(
-            id: UUID(),
             name: name,
             members: [],
             moments: [],
@@ -69,7 +68,6 @@ final class MarginR11Service: ObservableObject {
     func postToGroup(_ groupId: UUID, content: String, mood: Moment.Mood) {
         guard let index = groups.firstIndex(where: { $0.id == groupId }) else { return }
         let moment = Moment(
-            id: UUID(),
             content: content,
             mood: mood,
             authorId: nil,

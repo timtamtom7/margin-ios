@@ -1,0 +1,30 @@
+{
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Services/ContextService.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextService.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextService.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextService.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextService.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextService.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Components/ContextPill.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextPill.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextPill.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextPill.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextPill.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContextPill.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/ContentView.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContentView.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/ContentView.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Screens/CaptureView.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureView.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureView.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureView.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureView.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureView.swiftdeps"
+  }
+}

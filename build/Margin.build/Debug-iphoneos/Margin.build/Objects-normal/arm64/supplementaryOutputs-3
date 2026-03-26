@@ -1,0 +1,37 @@
+{
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/App/AppState.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppState.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppState.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppState.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppState.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppState.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Services/AIService.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIService.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIService.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIService.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIService.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIService.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Services/AppleIntelligenceService.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppleIntelligenceService.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppleIntelligenceService.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppleIntelligenceService.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppleIntelligenceService.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AppleIntelligenceService.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Components/AIPromptBubble.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIPromptBubble.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIPromptBubble.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIPromptBubble.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIPromptBubble.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/AIPromptBubble.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Components/CaptureButton.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureButton.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureButton.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureButton.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureButton.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/CaptureButton.swiftdeps"
+  }
+}

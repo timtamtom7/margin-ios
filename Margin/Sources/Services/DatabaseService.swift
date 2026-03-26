@@ -162,7 +162,10 @@ final class DatabaseService {
     // MARK: - Moments
 
     func saveMoment(_ moment: Moment) throws {
-        guard let db = db else { return }
+        guard let db = db else {
+            let nsError = NSError(domain: "DatabaseService", code: 1, userInfo: [NSLocalizedDescriptionKey: "Database connection not available"])
+            throw nsError
+        }
         let insert = moments.insert(
             id <- moment.id.uuidString,
             text <- moment.text,

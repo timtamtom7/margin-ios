@@ -1,0 +1,30 @@
+{
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Models/Moment.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Moment.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Moment.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Moment.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Moment.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Moment.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Components/MomentCard.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentCard.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentCard.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentCard.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentCard.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentCard.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Screens/MomentDetailView.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentDetailView.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentDetailView.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentDetailView.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentDetailView.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentDetailView.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Screens/MomentStreamView.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentStreamView.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentStreamView.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentStreamView.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentStreamView.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentStreamView.swiftdeps"
+  }
+}

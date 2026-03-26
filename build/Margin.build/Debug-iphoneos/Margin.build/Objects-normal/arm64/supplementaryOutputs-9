@@ -1,0 +1,30 @@
+{
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Models/MomentThread.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentThread.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentThread.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentThread.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentThread.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/MomentThread.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Models/Pattern.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Pattern.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Pattern.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Pattern.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Pattern.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/Pattern.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Components/PatternCard.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternCard.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternCard.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternCard.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternCard.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternCard.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Screens/PatternAnalysisView.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternAnalysisView.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternAnalysisView.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternAnalysisView.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternAnalysisView.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/PatternAnalysisView.swiftdeps"
+  }
+}

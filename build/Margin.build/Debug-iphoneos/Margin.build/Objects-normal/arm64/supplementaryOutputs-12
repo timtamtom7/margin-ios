@@ -1,0 +1,30 @@
+{
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Models/WeeklySummary.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummary.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummary.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummary.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummary.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummary.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Services/VoiceService.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/VoiceService.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/VoiceService.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/VoiceService.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/VoiceService.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/VoiceService.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/Margin/Sources/Views/Screens/WeeklySummaryView.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummaryView.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummaryView.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummaryView.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummaryView.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/WeeklySummaryView.swiftdeps"
+  },
+  "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "object" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/mauriello/Dev/margin-ios/build/Margin.build/Debug-iphoneos/Margin.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps"
+  }
+}

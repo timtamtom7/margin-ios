@@ -1,0 +1,201 @@
+{
+  "" : {
+    "const-values" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/SnapKit-primary.swiftconstvalues",
+    "dependencies" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/SnapKit-primary.d",
+    "diagnostics" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/SnapKit-primary.dia",
+    "emit-module-dependencies" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/SnapKit-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/SnapKit-primary-emit-module.dia",
+    "pch" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/SnapKit-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/SnapKit-primary.swiftdeps"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/Constraint.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Constraint.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Constraint.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Constraint.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintAttributes.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintAttributes.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintAttributes.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintAttributes.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintConfig.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintConfig.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintConfig.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintConfig.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintConstantTarget.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintConstantTarget.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintConstantTarget.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintConstantTarget.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintDSL.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDSL.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDSL.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDSL.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintDescription.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDescription.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDescription.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDescription.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintDirectionalInsetTarget.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDirectionalInsetTarget.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDirectionalInsetTarget.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDirectionalInsetTarget.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintDirectionalInsets.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDirectionalInsets.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDirectionalInsets.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintDirectionalInsets.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintInsetTarget.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintInsetTarget.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintInsetTarget.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintInsetTarget.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintInsets.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintInsets.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintInsets.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintInsets.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintItem.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintItem.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintItem.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintItem.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintLayoutGuide+Extensions.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuide+Extensions.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuide+Extensions.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuide+Extensions.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintLayoutGuide.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuide.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuide.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuide.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintLayoutGuideDSL.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuideDSL.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuideDSL.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutGuideDSL.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintLayoutSupport.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupport.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupport.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupport.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintLayoutSupportDSL.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMaker.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMaker.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMaker.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMaker.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMakerEditable.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMakerExtendable.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMakerFinalizable.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMakerPrioritizable.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerPrioritizable.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerPrioritizable.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerPrioritizable.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMakerRelatable+Extensions.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerRelatable+Extensions.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerRelatable+Extensions.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerRelatable+Extensions.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMakerRelatable.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerRelatable.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerRelatable.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMakerRelatable.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintMultiplierTarget.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMultiplierTarget.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMultiplierTarget.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintMultiplierTarget.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintOffsetTarget.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintOffsetTarget.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintOffsetTarget.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintOffsetTarget.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintPriority.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintPriority.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintPriority.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintPriority.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintPriorityTarget.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintRelatableTarget.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintRelation.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintRelation.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintRelation.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintRelation.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintView+Extensions.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintView+Extensions.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintView+Extensions.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintView+Extensions.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintView.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintView.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintView.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintView.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/ConstraintViewDSL.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintViewDSL.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintViewDSL.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/ConstraintViewDSL.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/Debugging.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Debugging.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Debugging.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Debugging.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/LayoutConstraint.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/LayoutConstraint.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/LayoutConstraint.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/LayoutConstraint.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/LayoutConstraintItem.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/LayoutConstraintItem.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/LayoutConstraintItem.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/LayoutConstraintItem.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/Typealiases.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Typealiases.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Typealiases.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/Typealiases.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/Sources/UILayoutSupport+Extensions.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/UILayoutSupport+Extensions.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/UILayoutSupport+Extensions.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/UILayoutSupport+Extensions.o"
+  },
+  "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "index-unit-output-path" : "/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/mauriello/Library/Developer/Xcode/DerivedData/Margin-djtondfieayiuvctkiopznoeqsul/SourcePackages/checkouts/SnapKit/build/SnapKit.build/Release-iphoneos/SnapKit.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  }
+}

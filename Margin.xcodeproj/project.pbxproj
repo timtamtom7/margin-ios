@@ -43,6 +43,7 @@
 		9BE9D1C9072494CCD987AC63 /* PatternCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AC43BA6A042763079AA71 /* PatternCard.swift */; };
 		9E00A0726A7A3552EC4FB5F5 /* DailyDigestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744DB1FDE0FDD587671E8ED8 /* DailyDigestCard.swift */; };
 		A12048539FD24DB36C5884FD /* VoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA14B6F01CE30AF86DE955A /* VoiceService.swift */; };
+		AB313FB7661EABB528557417 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F05CF3E28D41FF216EEDCA /* Theme.swift */; };
 		B234EE2578893681E3811980 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDC3886741A6069B0CE63 /* AIService.swift */; };
 		B7EDCC34AF10BB8061679D18 /* ContextPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9FA4AB6CB138CA5AEAA642 /* ContextPill.swift */; };
 		CA8FE1DC1A25DECC62175E9F /* PatternAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D6B5522056F8C2C22797E /* PatternAnalysisView.swift */; };
@@ -62,6 +63,7 @@
 		08A0F744832777540B3416B0 /* MenuBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewController.swift; sourceTree = "<group>"; };
 		093927AD5E6F4617317A8F28 /* ContextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextService.swift; sourceTree = "<group>"; };
 		10AC0119187F70698C12975D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		10F05CF3E28D41FF216EEDCA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		119F6E73A59B39E6C0ACE83C /* AIPromptBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPromptBubble.swift; sourceTree = "<group>"; };
 		1516E31DCF19B4C801C0ECC9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		15D651C6A1ADBDD45BC9F85C /* Margin.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Margin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D4916AF7D93CB2C1777DC0 /* DesignSystem.swift */,
+				10F05CF3E28D41FF216EEDCA /* Theme.swift */,
 				9B8EC68D4FC2F2F03A9BB5EE /* ViewExtensions.swift */,
 			);
 			path = Utilities;
@@ -471,6 +474,7 @@
 				94FE78AC42365192EB3268B9 /* SharedFeedView.swift in Sources */,
 				2ACCBEF6AF098B0A7B4F61B6 /* SpatialGalleryView.swift in Sources */,
 				05DC5900EEA0AA1A3669FA46 /* SubscriptionManager.swift in Sources */,
+				AB313FB7661EABB528557417 /* Theme.swift in Sources */,
 				7801DF6D3C869ED9B8DBCAC4 /* ThreadView.swift in Sources */,
 				DD2329762D9620BE1E769804 /* ViewExtensions.swift in Sources */,
 				A12048539FD24DB36C5884FD /* VoiceService.swift in Sources */,

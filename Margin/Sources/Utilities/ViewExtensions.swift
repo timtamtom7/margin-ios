@@ -4,8 +4,8 @@ extension View {
     func marginCard() -> some View {
         self
             .background(MarginColors.surface)
-            .cornerRadius(12)
-            .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
+            .cornerRadius(Theme.CornerRadius.md)
+            .shadow(color: Theme.Shadow.card.color, radius: Theme.Shadow.card.radius, x: Theme.Shadow.card.x, y: Theme.Shadow.card.y)
     }
 
     func marginTextStyle() -> some View {

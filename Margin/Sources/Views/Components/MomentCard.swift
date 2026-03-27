@@ -83,6 +83,8 @@ struct MomentCard: View {
                 .foregroundColor(MarginColors.primaryText)
                 .lineLimit(isExpanded ? nil : 3)
                 .fixedSize(horizontal: false, vertical: true)
+                .accessibilityLabel("Thought: \(moment.text)")
+                .accessibilityHint("Tap to expand or collapse this moment")
 
             // R2: Location tag (privacy-first, shows type not coordinates)
             if let locationLabel = moment.locationLabel {
@@ -128,6 +130,7 @@ struct MomentCard: View {
         .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
         .rotationEffect(.degrees(Double.random(in: -0.5...0.5)))
         .onTapGesture {
+            Theme.Haptic.light()
             withAnimation(.easeInOut(duration: 0.2)) {
                 isExpanded.toggle()
             }

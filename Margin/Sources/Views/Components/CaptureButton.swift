@@ -7,7 +7,10 @@ struct CaptureButton: View {
     @State private var isPressed = false
 
     var body: some View {
-        Button(action: action) {
+        Button(action: {
+            Theme.Haptic.medium()
+            action()
+        }) {
             ZStack {
                 // Outer pulse ring
                 Circle()
@@ -55,6 +58,8 @@ struct CaptureButton: View {
             }
         }
         .buttonStyle(CaptureButtonStyle())
+        .accessibilityLabel("Capture new thought")
+        .accessibilityHint("Opens the capture screen to record a new micro-thought")
         .onAppear {
             withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
                 isPulsing = true

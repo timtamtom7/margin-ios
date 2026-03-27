@@ -12,7 +12,8 @@ struct ContextPill: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 5)
         .background(MarginColors.accentSecondary.opacity(0.15))
-        .cornerRadius(12)
+        .cornerRadius(Theme.CornerRadius.sm)
+        .accessibilityLabel("Context: \(label)")
     }
 }
 

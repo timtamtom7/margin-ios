@@ -1,15 +1,9 @@
 import SwiftUI
 
-enum MarginColors {
-    static let background = Color(hex: "F5F2EB")
-    static let surface = Color(hex: "FDFCF8")
-    static let primaryText = Color(hex: "2C2A26")
-    static let secondaryText = Color(hex: "7A776F")
-    static let accent = Color(hex: "C4A882")
-    static let accentSecondary = Color(hex: "9AAEAB")
-    static let destructive = Color(hex: "C0736A")
-    static let divider = Color(hex: "E0DDD4")
-}
+// MARK: - DesignSystem.swift
+// ⚠️ DEPRECATED — All tokens have moved to Theme.swift
+// This file is kept for backward compatibility during migration.
+// Please use Theme.Colors, Theme.Typography, Theme.Spacing, Theme.Haptic directly.
 
 extension Color {
     init(hex: String) {
@@ -37,19 +31,31 @@ extension Color {
     }
 }
 
+// Backward-compatible aliases — delegate to Theme
+enum MarginColors {
+    static let background = Theme.Colors.background
+    static let surface = Theme.Colors.surface
+    static let primaryText = Theme.Colors.primaryText
+    static let secondaryText = Theme.Colors.secondaryText
+    static let accent = Theme.Colors.accent
+    static let accentSecondary = Theme.Colors.accentSecondary
+    static let destructive = Theme.Colors.destructive
+    static let divider = Theme.Colors.divider
+}
+
 enum MarginFonts {
-    static let heading = Font.custom("Georgia", size: 28, relativeTo: .title)
-    static let subheading = Font.custom("Georgia", size: 20, relativeTo: .title2)
-    static let body = Font.system(size: 16, design: .default)
-    static let caption = Font.system(size: 13, weight: .light)
-    static let handwritten = Font.system(size: 15, design: .default).italic()
+    static let heading = Theme.Typography.heading
+    static let subheading = Theme.Typography.subheading
+    static let body = Theme.Typography.body
+    static let caption = Theme.Typography.caption
+    static let handwritten = Theme.Typography.handwritten
 }
 
 enum MarginSpacing {
-    static let xs: CGFloat = 4
-    static let sm: CGFloat = 8
-    static let md: CGFloat = 16
-    static let lg: CGFloat = 24
-    static let xl: CGFloat = 32
-    static let xxl: CGFloat = 48
+    static let xs: CGFloat = Theme.Spacing.xs
+    static let sm: CGFloat = Theme.Spacing.sm
+    static let md: CGFloat = Theme.Spacing.md
+    static let lg: CGFloat = Theme.Spacing.lg
+    static let xl: CGFloat = Theme.Spacing.xl
+    static let xxl: CGFloat = Theme.Spacing.xxl
 }

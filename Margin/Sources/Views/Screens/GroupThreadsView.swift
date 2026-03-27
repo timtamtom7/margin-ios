@@ -189,7 +189,7 @@ struct GroupThreadCard: View {
                             .frame(width: 28, height: 28)
                             .overlay(
                                 Text("+\(thread.memberCount - 3)")
-                                    .font(.system(size: 10))
+                                    .font(.system(size: 11))
                                     .foregroundColor(MarginColors.secondaryText)
                             )
                     }
@@ -307,7 +307,7 @@ struct GroupThreadDetailView: View {
                         .frame(width: 24, height: 24)
                         .overlay(
                             Text(initial)
-                                .font(.system(size: 10, weight: .medium))
+                                .font(.system(size: 11, weight: .medium))
                                 .foregroundColor(.white)
                         )
                 }

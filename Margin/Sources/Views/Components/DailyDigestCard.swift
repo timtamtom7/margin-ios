@@ -46,6 +46,8 @@ struct DailyDigestCard: View {
                 squiggle(width: 40)
             }
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Today's Margin digest: \(digest.totalMoments) moments, \(digest.estimatedDeadTimeMinutes) minutes of dead time")
         .padding(MarginSpacing.lg)
         .background(
             ZStack {

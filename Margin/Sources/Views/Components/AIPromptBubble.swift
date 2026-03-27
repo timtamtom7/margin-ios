@@ -14,6 +14,7 @@ struct AIPromptBubble: View {
                 .foregroundColor(MarginColors.secondaryText)
                 .italic()
                 .padding(.top, MarginSpacing.sm)
+                .accessibilityLabel("AI prompt: \(prompt)")
 
             HStack {
                 TextField("Your reflection...", text: $answer, axis: .vertical)
@@ -23,19 +24,26 @@ struct AIPromptBubble: View {
                     .focused($isFocused)
                     .padding(MarginSpacing.sm)
                     .background(MarginColors.background)
-                    .cornerRadius(8)
+                    .cornerRadius(Theme.CornerRadius.sm)
+                    .accessibilityLabel("Reflection answer")
+                    .accessibilityHint("Enter your reflection response")
 
-                Button(action: onSubmit) {
+                Button(action: {
+                    Theme.Haptic.light()
+                    onSubmit()
+                }) {
                     Image(systemName: "arrow.up.circle.fill")
                         .font(.system(size: 28))
-                        .foregroundColor(MarginColors.accent)
+                        .foregroundColor(answer.isEmpty ? MarginColors.divider : MarginColors.accent)
                 }
                 .disabled(answer.isEmpty)
+                .accessibilityLabel("Submit reflection")
+                .accessibilityHint("Submits your reflection response")
             }
         }
         .padding(MarginSpacing.md)
         .background(MarginColors.surface)
-        .cornerRadius(12)
+        .cornerRadius(Theme.CornerRadius.md)
         .shadow(color: Color.black.opacity(0.03), radius: 4, x: 0, y: 2)
     }
 }

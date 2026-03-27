@@ -140,6 +140,8 @@ struct CaptureView: View {
                             .font(MarginFonts.caption)
                             .foregroundColor(MarginColors.secondaryText)
                     }
+                    .accessibilityLabel("Change mood")
+                    .accessibilityHint("Opens the mood selector sheet")
                 }
                 .padding(MarginSpacing.sm)
                 .background(MarginColors.accentSecondary.opacity(0.1))
@@ -269,6 +271,7 @@ struct CaptureView: View {
     }
 
     private func startVoiceRecording() {
+        Theme.Haptic.medium()
         Task {
             let granted = await appState.voiceService.requestPermissions()
             if granted {
@@ -290,6 +293,7 @@ struct CaptureView: View {
     }
 
     private func stopVoiceRecording() {
+        Theme.Haptic.light()
         _ = appState.voiceService.stopRecording()
 
         // Poll for transcription
@@ -308,6 +312,7 @@ struct CaptureView: View {
 
     private func submitMoment() {
         guard !textInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        Theme.Haptic.medium()
 
         // R10: Check subscription tier limit before saving
         if !appState.subscriptionManager.checkCaptureAllowed() {
@@ -458,6 +463,7 @@ struct MoodSelectorSheet: View {
     private func moodButton(_ mood: MoodTag) -> some View {
         let isSelected = selectedMood == mood
         return Button {
+            Theme.Haptic.selection()
             withAnimation(.easeInOut(duration: 0.2)) {
                 selectedMood = isSelected ? nil : mood
             }
@@ -478,6 +484,8 @@ struct MoodSelectorSheet: View {
                     .stroke(isSelected ? MarginColors.accent : MarginColors.divider, lineWidth: isSelected ? 2 : 1)
             )
         }
+        .accessibilityLabel(mood.displayName)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 

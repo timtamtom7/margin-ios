@@ -99,15 +99,23 @@ final class ContextService: ObservableObject {
     func requestLocationPermission() {
         // In R2, we use CLLocationManager just for permission status
         // Actual location detection is time-based (privacy-first)
+        #if os(iOS)
         let manager = CLLocationManager()
         let status = manager.authorizationStatus
         locationPermissionGranted = (status == .authorizedWhenInUse || status == .authorizedAlways)
+        #else
+        locationPermissionGranted = false
+        #endif
     }
 
     func checkLocationPermission() {
+        #if os(iOS)
         let manager = CLLocationManager()
         let status = manager.authorizationStatus
         locationPermissionGranted = (status == .authorizedWhenInUse || status == .authorizedAlways)
+        #else
+        locationPermissionGranted = false
+        #endif
     }
 
     func detectLocationType() {

@@ -112,6 +112,8 @@ struct QuickCaptureMenuView: View {
                         .foregroundColor(MarginColors.secondaryText)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Expand to full app")
+                .accessibilityHint("Open the main Margin application window")
             }
             .padding(.horizontal, 16)
             .padding(.top, 12)
@@ -157,6 +159,8 @@ struct QuickCaptureMenuView: View {
                         .foregroundColor(MarginColors.secondaryText)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Quit")
+                .accessibilityHint("Close the menu bar app")
 
                 Spacer()
 
@@ -171,6 +175,8 @@ struct QuickCaptureMenuView: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(text.isEmpty)
+                .accessibilityLabel("Save")
+                .accessibilityHint(text.isEmpty ? "Enter some text first" : "Save this moment")
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 12)

@@ -45,6 +45,8 @@ struct MacTimelineView: View {
                         .foregroundColor(MarginColors.accent)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Previous month")
+                .accessibilityHint("View the calendar for the previous month")
 
                 Spacer()
 
@@ -60,6 +62,8 @@ struct MacTimelineView: View {
                         .foregroundColor(MarginColors.accent)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Next month")
+                .accessibilityHint("View the calendar for the next month")
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 16)
@@ -158,6 +162,8 @@ struct MacTimelineView: View {
                                     .cornerRadius(8)
                                 }
                                 .buttonStyle(.plain)
+                                .accessibilityLabel("Moment from \(moment.formattedTime)")
+                                .accessibilityHint("Tap to view this moment in detail")
                             }
                         }
                         .padding(.horizontal, 24)
@@ -203,6 +209,16 @@ struct CalendarDayCell: View {
         return formatter.string(from: date)
     }
 
+    private var accessibilityLabel: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        let dateStr = formatter.string(from: date)
+        if momentCount > 0 {
+            return "\(dateStr), \(momentCount) moment\(momentCount == 1 ? "" : "s")"
+        }
+        return dateStr
+    }
+
     var body: some View {
         Button(action: action) {
             VStack(spacing: 4) {
@@ -228,6 +244,8 @@ struct CalendarDayCell: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityHint("Select this date to view moments")
     }
 }
 

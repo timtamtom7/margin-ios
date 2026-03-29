@@ -55,6 +55,8 @@ struct MacReflectionDetailView: View {
                             .foregroundColor(isEditing ? MarginColors.accent : MarginColors.secondaryText)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel(isEditing ? "Done editing" : "Edit moment")
+                    .accessibilityHint(isEditing ? "Save your changes" : "Edit this moment's text")
                 }
 
                 Divider()
@@ -84,6 +86,8 @@ struct MacReflectionDetailView: View {
                             .padding(.vertical, 8)
                             .background(MarginColors.accent)
                             .cornerRadius(6)
+                            .accessibilityLabel("Done editing")
+                            .accessibilityHint("Save your changes and close the editor")
                         }
                     }
                 } else {

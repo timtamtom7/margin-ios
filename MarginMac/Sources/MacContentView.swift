@@ -66,6 +66,8 @@ struct MacContentView: View {
                             selectedMoment = nil
                         }
                     }
+                    .accessibilityLabel("\(tab.rawValue) tab")
+                    .accessibilityHint("Navigate to \(tab.rawValue.lowercased())")
                 }
             }
             .padding(.horizontal, 12)
@@ -100,6 +102,8 @@ struct MacContentView: View {
                                 MomentRowItem(moment: moment, isSelected: selectedMoment?.id == moment.id) {
                                     selectedMoment = moment
                                 }
+                                .accessibilityLabel("Moment: \(moment.text.prefix(50))")
+                                .accessibilityHint("Tap to view this moment")
                             }
                         }
                         .padding(.horizontal, 12)
@@ -124,6 +128,8 @@ struct MacContentView: View {
                 .cornerRadius(8)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Capture a thought")
+            .accessibilityHint("Open the capture view to record a new moment")
             .padding(.horizontal, 20)
             .padding(.bottom, 20)
         }
@@ -263,6 +269,8 @@ struct MacWelcomeView: View {
                 .cornerRadius(8)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Capture your first thought")
+            .accessibilityHint("Open the capture view to record your first moment")
 
             Spacer()
         }

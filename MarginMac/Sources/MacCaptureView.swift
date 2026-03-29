@@ -42,6 +42,8 @@ struct MacCaptureView: View {
                 }
                 .font(MarginFonts.body)
                 .foregroundColor(MarginColors.secondaryText)
+                .accessibilityLabel("Cancel")
+                .accessibilityHint("Discard and close this capture")
 
                 Spacer()
 
@@ -57,6 +59,8 @@ struct MacCaptureView: View {
                 .font(MarginFonts.body)
                 .foregroundColor(text.isEmpty ? MarginColors.divider : MarginColors.accent)
                 .disabled(text.isEmpty)
+                .accessibilityLabel("Save moment")
+                .accessibilityHint(text.isEmpty ? "Enter some text first" : "Save this moment")
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 16)
@@ -86,6 +90,8 @@ struct MacCaptureView: View {
                                 .cornerRadius(4)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel("Use prompt: \(prompt)")
+                        .accessibilityHint("Start your thought with this prompt")
                     }
                 }
             }

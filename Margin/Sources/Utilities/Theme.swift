@@ -72,6 +72,7 @@ enum Theme {
 
     // MARK: - Haptic Feedback
 
+    #if os(iOS)
     enum Haptic {
         /// Light impact — subtle UI feedback
         @MainActor
@@ -122,6 +123,7 @@ enum Theme {
             generator.notificationOccurred(.error)
         }
     }
+    #endif
 
     // MARK: - Animation Tokens
 

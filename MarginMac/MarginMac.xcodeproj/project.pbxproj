@@ -29,6 +29,7 @@
 		BDDEB33EA91D4F30E5D66A8D /* GroupThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75AAE44492D9EAF350A701 /* GroupThread.swift */; };
 		BE3EC3DE079B6C4C03907D5F /* RetentionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10B74809CE6DE4473CFFC4 /* RetentionService.swift */; };
 		C3CE8B938A7697A8B6E3628F /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA149A8EE2994C1B6ECDDDE /* MacSettingsView.swift */; };
+		EB59DDA98E7E03CAF8C2AD84 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552111B1BF347821F2277120 /* Theme.swift */; };
 		F5C95245EC2BDC58B94B0DE4 /* AppleIntelligenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE0C0EF553ECE7762BC0BA /* AppleIntelligenceService.swift */; };
 		F835DFC7023AEED875CE83CE /* ContextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBCD25CFA22F59DAA0C100 /* ContextService.swift */; };
 		F8A880162251FDA9583BC208 /* MacCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EE056561ECDB8D9121C60E /* MacCaptureView.swift */; };
@@ -45,6 +46,7 @@
 		3DDC77E4B1D26DB2C4661A04 /* MarginMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginMenuBar.swift; sourceTree = "<group>"; };
 		3E056AC16B38211B1F417928 /* MacContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacContentView.swift; sourceTree = "<group>"; };
 		4CFE333D95056915FC1007BF /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		552111B1BF347821F2277120 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		60CE0C0EF553ECE7762BC0BA /* AppleIntelligenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIntelligenceService.swift; sourceTree = "<group>"; };
 		64AD39CDDDA60D2158096EC4 /* MomentThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentThread.swift; sourceTree = "<group>"; };
 		65BC9E0B38B1DA0C3F4A3836 /* MacTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTimelineView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				1C2278684BE270DA75023EFD /* DesignSystem.swift */,
+				552111B1BF347821F2277120 /* Theme.swift */,
 				7F55289E6E4B4D4C89C6FEFF /* ViewExtensions.swift */,
 			);
 			name = Utilities;
@@ -263,6 +266,7 @@
 				8029CFC96433B660ABA0206C /* Pattern.swift in Sources */,
 				BE3EC3DE079B6C4C03907D5F /* RetentionService.swift in Sources */,
 				2C6E6B5561DA3156E807270C /* SubscriptionManager.swift in Sources */,
+				EB59DDA98E7E03CAF8C2AD84 /* Theme.swift in Sources */,
 				7BCBFBC40291674861BB1FCE /* ViewExtensions.swift in Sources */,
 				5378CCFBB86A159BAFF4E79A /* WeeklySummary.swift in Sources */,
 			);

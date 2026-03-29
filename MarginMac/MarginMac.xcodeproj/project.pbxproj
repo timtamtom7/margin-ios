@@ -28,6 +28,7 @@
 		BC1078CA24F90D977157BD20 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FFA135E366D2D950ED72192D /* SQLite */; };
 		BDDEB33EA91D4F30E5D66A8D /* GroupThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75AAE44492D9EAF350A701 /* GroupThread.swift */; };
 		BE3EC3DE079B6C4C03907D5F /* RetentionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10B74809CE6DE4473CFFC4 /* RetentionService.swift */; };
+		C385397D475FFA95B3C3CC73 /* AIReflectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BFF9C18CE3B9702834F166 /* AIReflectionService.swift */; };
 		C3CE8B938A7697A8B6E3628F /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA149A8EE2994C1B6ECDDDE /* MacSettingsView.swift */; };
 		EB59DDA98E7E03CAF8C2AD84 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552111B1BF347821F2277120 /* Theme.swift */; };
 		F5C95245EC2BDC58B94B0DE4 /* AppleIntelligenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE0C0EF553ECE7762BC0BA /* AppleIntelligenceService.swift */; };
@@ -48,6 +49,7 @@
 		4CFE333D95056915FC1007BF /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		552111B1BF347821F2277120 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		60CE0C0EF553ECE7762BC0BA /* AppleIntelligenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIntelligenceService.swift; sourceTree = "<group>"; };
+		62BFF9C18CE3B9702834F166 /* AIReflectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIReflectionService.swift; sourceTree = "<group>"; };
 		64AD39CDDDA60D2158096EC4 /* MomentThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentThread.swift; sourceTree = "<group>"; };
 		65BC9E0B38B1DA0C3F4A3836 /* MacTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTimelineView.swift; sourceTree = "<group>"; };
 		6AD0A4DCEB6FCE631B8F4C60 /* MarginR11Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginR11Service.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		1FFEA0AA21341CEDE45DA937 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				62BFF9C18CE3B9702834F166 /* AIReflectionService.swift */,
 				1CD141AE8F66E9869EBDE3B4 /* AIService.swift */,
 				60CE0C0EF553ECE7762BC0BA /* AppleIntelligenceService.swift */,
 				07EBCD25CFA22F59DAA0C100 /* ContextService.swift */,
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C385397D475FFA95B3C3CC73 /* AIReflectionService.swift in Sources */,
 				620D9961DDF86752FDC75880 /* AIService.swift in Sources */,
 				1CDC9192BC497EAA6333F363 /* AppDelegate.swift in Sources */,
 				F5C95245EC2BDC58B94B0DE4 /* AppleIntelligenceService.swift in Sources */,

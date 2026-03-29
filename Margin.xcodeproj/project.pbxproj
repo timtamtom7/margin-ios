@@ -33,6 +33,7 @@
 		6C60B2380861D58A7D6D2C85 /* RetentionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A132BE87BB9C4F13C8B49 /* RetentionService.swift */; };
 		6FC662078A062018C203D7F4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF9156B73516808A5B237FD /* main.swift */; };
 		7437170DF53FF690A76DE613 /* MenuBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0F744832777540B3416B0 /* MenuBarViewController.swift */; };
+		747074037865290E0180AA99 /* AIReflectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD2BDA3E2499862D0CC729 /* AIReflectionService.swift */; };
 		77B5A6500F4C074EF80DBEFB /* MarginWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05E33E7EEE8E5D87F6A1E3 /* MarginWatchApp.swift */; };
 		7801DF6D3C869ED9B8DBCAC4 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E680AD656F61C1051E2F26B3 /* ThreadView.swift */; };
 		8F0D9DE7DEDCD4F9D2E7D1B6 /* CaptureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84536039264AB1366AB0C56C /* CaptureButton.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		017EAFDD200F56525E0F3531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		02AD2BDA3E2499862D0CC729 /* AIReflectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIReflectionService.swift; sourceTree = "<group>"; };
 		08A0F744832777540B3416B0 /* MenuBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewController.swift; sourceTree = "<group>"; };
 		093927AD5E6F4617317A8F28 /* ContextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextService.swift; sourceTree = "<group>"; };
 		10AC0119187F70698C12975D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		17EBDDCAA9A6441F963F3A7C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				02AD2BDA3E2499862D0CC729 /* AIReflectionService.swift */,
 				4EFBDC3886741A6069B0CE63 /* AIService.swift */,
 				C1D1D54BB1817730FF964404 /* AppleIntelligenceService.swift */,
 				093927AD5E6F4617317A8F28 /* ContextService.swift */,
@@ -424,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9158E885DAC2F7985C86C6A9 /* AIPromptBubble.swift in Sources */,
+				747074037865290E0180AA99 /* AIReflectionService.swift in Sources */,
 				B234EE2578893681E3811980 /* AIService.swift in Sources */,
 				53878F5D8F20B2CB42BBC4A3 /* AppState.swift in Sources */,
 				074963736442956EF5504811 /* AppleIntelligenceService.swift in Sources */,

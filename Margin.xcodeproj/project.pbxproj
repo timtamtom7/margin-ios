@@ -158,13 +158,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		1DA12182BA098E36DBD36BA9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		452ED4218813987779AAB678 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,8 +250,6 @@
 			children = (
 				017EAFDD200F56525E0F3531 /* Info.plist */,
 				57B9FD085477466CAFE402A4 /* App */,
-				A76B7302632F3CF2504D5D34 /* Models */,
-				1DA12182BA098E36DBD36BA9 /* Views */,
 			);
 			path = MarginWatch;
 			sourceTree = "<group>";
@@ -282,13 +273,6 @@
 				BEF2E63673F9DE575B15F6CE /* MarginWatch.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A76B7302632F3CF2504D5D34 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		CBC6F0F60CB201545C2F4E12 /* Screens */ = {

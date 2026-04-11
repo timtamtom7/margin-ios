@@ -55,7 +55,7 @@ struct PaywallView: View {
                 .font(MarginFonts.heading)
                 .foregroundColor(MarginColors.primaryText)
 
-            Text("You've captured \(20) moments this month on the free tier. Upgrade to Pro for unlimited captures and more.")
+            Text("You've captured \(subscriptionManager.momentsUsedThisMonth) moments this month on the free tier. Upgrade to Pro for unlimited captures and more.")
                 .font(MarginFonts.body)
                 .foregroundColor(MarginColors.secondaryText)
                 .multilineTextAlignment(.center)
@@ -106,7 +106,7 @@ struct PaywallView: View {
 
                     Spacer()
 
-                    Text("$2.99/mo")
+                    Text(subscriptionManager.currentTier.price)
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white.opacity(0.9))
                 }

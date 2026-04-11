@@ -1,5 +1,23 @@
 import SwiftUI
 
+// MARK: - View Extensions
+
+extension View {
+    /// Applies symbol effect only on iOS 17+ and when Reduce Motion is off
+    @ViewBuilder
+    func animatedWaveform() -> some View {
+        if #available(iOS 17.0, *) {
+            if !UIAccessibility.isReduceMotionEnabled {
+                self.symbolEffect(.variableColor.iterative, options: .repeating)
+            } else {
+                self
+            }
+        } else {
+            self
+        }
+    }
+}
+
 struct CaptureView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
@@ -173,7 +191,7 @@ struct CaptureView: View {
                     Image(systemName: "waveform")
                         .font(.system(size: 64))
                         .foregroundColor(MarginColors.accent)
-                        .symbolEffect(.variableColor.iterative, options: .repeating)
+                        .animatedWaveform()
 
                     Text("Listening...")
                         .font(MarginFonts.subheading)

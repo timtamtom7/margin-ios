@@ -3,6 +3,7 @@ import SwiftUI
 struct PatternCard: View {
     let pattern: Pattern
     @State private var isExpanded = false
+    @State private var rotation: Double = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: MarginSpacing.sm) {
@@ -38,7 +39,7 @@ struct PatternCard: View {
                     ForEach(pattern.insights, id: \.self) { insight in
                         HStack(spacing: MarginSpacing.xs) {
                             Image(systemName: "lightbulb")
-                                .font(.system(size: 9))
+                                .font(.system(size: 11))
                                 .foregroundColor(MarginColors.accent)
                             Text(insight)
                                 .font(MarginFonts.caption)
@@ -55,7 +56,7 @@ struct PatternCard: View {
                     ForEach(pattern.suggestedActions, id: \.self) { action in
                         HStack(spacing: MarginSpacing.xs) {
                             Image(systemName: "arrow.right.circle")
-                                .font(.system(size: 9))
+                                .font(.system(size: 11))
                                 .foregroundColor(MarginColors.accentSecondary)
                             Text(action)
                                 .font(MarginFonts.caption)
@@ -98,8 +99,11 @@ struct PatternCard: View {
         .background(MarginColors.surface)
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
-        // R2: Slight rotation for hand-drawn feel
-        .rotationEffect(.degrees(Double.random(in: -0.3...0.3)))
+        // R2: Slight rotation for hand-drawn feel — initialized once in onAppear
+        .rotationEffect(.degrees(rotation))
+        .onAppear {
+            rotation = Double.random(in: -0.3...0.3)
+        }
     }
 
     // R2: Simple line drawing illustrations based on trigger type

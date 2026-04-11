@@ -101,27 +101,40 @@ struct WeeklySummaryView: View {
     }
 
     private func insightCard(_ summary: WeeklySummary) -> some View {
-        VStack(alignment: .leading, spacing: MarginSpacing.md) {
-            HStack {
-                Image(systemName: "sparkles")
-                    .font(.system(size: 14))
-                    .foregroundColor(MarginColors.accent)
-                Text("Your Week")
-                    .font(MarginFonts.subheading)
-                    .foregroundColor(MarginColors.primaryText)
-            }
+        InsightCardView(summary: summary)
+    }
 
-            Text(summary.weeklyInsight)
-                .font(MarginFonts.handwritten)
-                .foregroundColor(MarginColors.primaryText)
-                .italic()
+    // R7: Extracted to struct for stable random rotation
+    private struct InsightCardView: View {
+        let summary: WeeklySummary
+        @State private var rotation: Double = 0
+
+        var body: some View {
+            VStack(alignment: .leading, spacing: MarginSpacing.md) {
+                HStack {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 14))
+                        .foregroundColor(MarginColors.accent)
+                    Text("Your Week")
+                        .font(MarginFonts.subheading)
+                        .foregroundColor(MarginColors.primaryText)
+                }
+
+                Text(summary.weeklyInsight)
+                    .font(MarginFonts.handwritten)
+                    .foregroundColor(MarginColors.primaryText)
+                    .italic()
+            }
+            .padding(MarginSpacing.lg)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(MarginColors.surface)
+            .cornerRadius(16)
+            .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
+            .rotationEffect(.degrees(rotation))
+            .onAppear {
+                rotation = Double.random(in: -0.5...0.5)
+            }
         }
-        .padding(MarginSpacing.lg)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(MarginColors.surface)
-        .cornerRadius(16)
-        .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
-        .rotationEffect(.degrees(Double.random(in: -0.5...0.5)))
     }
 
     // R7: Location patterns card in weekly summary

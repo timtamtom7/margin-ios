@@ -6,6 +6,7 @@ struct MomentCard: View {
     var showThreadIndicator: Bool = false
 
     @State private var isExpanded = false
+    @State private var rotation: Double = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: MarginSpacing.sm) {
@@ -35,7 +36,7 @@ struct MomentCard: View {
                 if let mood = moment.moodTag {
                     HStack(spacing: 2) {
                         Text(mood.emoji)
-                            .font(.system(size: 10))
+                            .font(.system(size: 11))
                         Text(mood.displayName)
                             .font(MarginFonts.caption)
                             .foregroundColor(MarginColors.secondaryText)
@@ -128,7 +129,10 @@ struct MomentCard: View {
         )
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.04), radius: 4, x: 0, y: 2)
-        .rotationEffect(.degrees(Double.random(in: -0.5...0.5)))
+        .rotationEffect(.degrees(rotation))
+        .onAppear {
+            rotation = Double.random(in: -0.5...0.5)
+        }
         .onTapGesture {
             Theme.Haptic.light()
             withAnimation(.easeInOut(duration: 0.2)) {
